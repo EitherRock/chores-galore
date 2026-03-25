@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cnrll6v462k3q"]
+
+[ext_resource type="ArrayMesh" uid="uid://b710bae1l6icv" path="res://assets/mesh/chair_Mesh chair.res" id="1_lgari"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o2jj0"]
+points = PackedVector3Array(0.8206349, 0.49238095, 0.0206116, 0.8206349, 0.49238095, -0.18821305, 0.8206349, -0.014920622, 0.0206116, 0.611746, 0.49238095, 0.0206116, 0.611746, -0.014920622, 0.0206116, 0.8206349, -0.014920622, -0.18821305, 0.611746, 0.49238095, -0.18821305, 0.611746, -0.014920622, -0.18821305, 0.75750345, 0.28, -0.20893407)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mflqp"]
+points = PackedVector3Array(0.46253967, 0.19396827, -0.45677277, 0.74934024, 0.28, -0.23326392, 0.6714227, 0.2834833, -0.21817112, 0.6714227, 0.2834833, -0.6060317, 0.76095235, 0.19396827, -0.6060317, 0.76095235, 0.19396827, -0.21817112, 0.46253967, 0.2834833, -0.33750993, 0.46253967, 0.19396827, -0.33750993, 0.74934024, 0.28, -0.5909389, 0.46253967, 0.2834833, -0.45677277, 0.6714227, 0.19396827, -0.6060317, 0.6714227, 0.19396827, -0.21817112)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6lulu"]
+points = PackedVector3Array(0.014926475, 0.19403836, -0.21807183, 0.16412698, 0.49238095, 0.0206116, 0.16412698, 0.49238095, -0.18821305, 0.16412698, -0.014920622, 0.0206116, -0.014920637, 0.49238095, 0.0206116, -0.014920637, -0.014920622, 0.0206116, 0.16412698, -0.014920622, -0.18821305, -0.014920637, 0.49238095, -0.18821305, -0.014920637, -0.014920622, -0.18821305, 0.13426234, 0.28342196, -0.21807183, 0.13426234, 0.19403836, -0.21807183, 0.014926475, 0.28342196, -0.21807183)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a6o4i"]
+points = PackedVector3Array(0.46249586, 0.2834833, -0.33750993, 0.014964461, 0.19396827, -0.6060317, 0.014964461, 0.2834833, -0.6060317, 0.014964461, 0.19396827, -0.21817112, 0.46249586, 0.19396827, -0.45677277, 0.014964461, 0.2834833, -0.21817112, 0.46249586, 0.2834833, -0.45677277, 0.46249586, 0.19396827, -0.33750993, 0.13434997, 0.2834833, -0.6060317, 0.13434997, 0.2834833, -0.21817112, 0.13434997, 0.19396827, -0.6060317, 0.13434997, 0.19396827, -0.21817112)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_igtis"]
+points = PackedVector3Array(0.82058823, 1.4174603, -0.63588464, 0.58190477, 0.7308541, -0.8149206, 0.6117665, -0.014920592, -0.8149206, 0.58190477, 0.7308541, -0.6060317, 0.82058823, -0.014920592, -0.63588464, 0.82058823, 1.4174603, -0.8149206, 0.58190477, 1.3577311, -0.7850677, 0.82058823, -0.014920592, -0.8149206, 0.6117665, -0.014920592, -0.63588464, 0.6117665, 1.4174603, -0.63588464, 0.76, 0.20174162, -0.6076274, 0.6117665, 1.4174603, -0.8149206, 0.58190477, 1.3577311, -0.6657376, 0.6714432, 0.19399166, -0.6060317, 0.5861877, 0.96, -0.60978, 0.79999995, 0.92333454, -0.62404996)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1dy3q"]
+points = PackedVector3Array(0.58187556, 1.3577778, -0.6657376, 0.2834921, 0.7312337, -0.8149206, 0.29719165, 0.76, -0.61562234, 0.58187556, 0.7312337, -0.8149206, 0.2834921, 1.3577778, -0.7850677, 0.568176, 0.76, -0.61562234, 0.2637153, 0.96, -0.5921866, 0.58187556, 1.3577778, -0.7850677, 0.2834921, 1.3577778, -0.6657376, 0.6016523, 0.96, -0.5921866, 0.58187556, 0.9698909, -0.8149206, 0.2834921, 0.9698909, -0.8149206)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_frjpp"]
+points = PackedVector3Array(-0.014838874, 0.49238098, -0.18821305, 0.8206349, 0.9697945, 0.0206116, 0.79999995, 0.9580031, -0.21217671, 0.8206349, 0.49238098, 0.0206116, -0.014838874, 0.9697945, 0.0206116, 0.0023015607, 0.96, -0.21317504, 0.8206349, 0.49238098, -0.18821305, -0.014838874, 0.49238098, 0.0206116, 0.8206349, 0.73108774, -0.21807183, -0.014838874, 0.73108774, -0.21807183)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ooubo"]
+points = PackedVector3Array(0.7861871, 0.96, -0.23416317, -0.014838874, 0.7311578, -0.6060317, 0.019608915, 0.96, -0.5900397, 0.8206349, 0.7311578, -0.6060317, -0.014838874, 0.7311578, -0.21817112, 0.8206349, 0.7311578, -0.21817112, 0.7861871, 0.96, -0.5900397, 0.019608915, 0.96, -0.23416317)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bgcgn"]
+points = PackedVector3Array(0.2835446, 1.7158437, -0.81490314, 0.79999995, 1.8765802, -0.64276814, 0.79999995, 1.435894, -0.64276814, 0.2835446, 1.7158437, -0.6358905, 0.8206349, 1.8949206, -0.81490314, 0.61170805, 1.4175537, -0.81490314, 0.2835446, 1.8949206, -0.81490314, 0.8206349, 1.4175537, -0.81490314, 0.30033192, 1.88, -0.6414857, 0.61170805, 1.4175537, -0.6358905)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_11ahf"]
+points = PackedVector3Array(-0.014920622, -0.014920592, -0.8149206, 0.16408025, -0.014920592, -0.8149206, 0.28349206, 1.8949206, -0.8149206, 0, 1.7994286, -0.6433438, 0.014932327, 0.19408512, -0.6060317, -0.014920622, 1.8949206, -0.8149206, 0.2752601, 1.8422359, -0.64, 0.2629003, 0.76, -0.62044597, 0.16408025, -0.014920592, -0.63588464, 0.26217684, 0.7610125, -0.79999995, 0, 0.08057139, -0.6433438, 0.13428572, 0.19408512, -0.6060317, 0.0056711338, 0.76, -0.62044597)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_lgari"]
+properties/0/path = NodePath(".:linear_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:angular_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="Chair" type="RigidBody3D" unique_id=2079449019]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=758362208]
+mesh = ExtResource("1_lgari")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="." unique_id=380087839]
+shape = SubResource("ConvexPolygonShape3D_o2jj0")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="." unique_id=1232880705]
+shape = SubResource("ConvexPolygonShape3D_mflqp")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=495890094]
+shape = SubResource("ConvexPolygonShape3D_6lulu")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=944211336]
+shape = SubResource("ConvexPolygonShape3D_a6o4i")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=2137865710]
+shape = SubResource("ConvexPolygonShape3D_igtis")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=52066665]
+shape = SubResource("ConvexPolygonShape3D_1dy3q")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1250334938]
+shape = SubResource("ConvexPolygonShape3D_frjpp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=553741173]
+shape = SubResource("ConvexPolygonShape3D_ooubo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=949671043]
+shape = SubResource("ConvexPolygonShape3D_bgcgn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1500076071]
+shape = SubResource("ConvexPolygonShape3D_11ahf")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=736659835]
+replication_config = SubResource("SceneReplicationConfig_lgari")

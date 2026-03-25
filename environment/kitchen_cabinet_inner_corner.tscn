@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqsm0kgcbavbq"]
+
+[ext_resource type="ArrayMesh" uid="uid://chogwfetkb5ru" path="res://assets/mesh/kitchenCabinetCornerInner_Mesh kitchenCabinetCornerInner.res" id="1_skkhk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uhjjn"]
+points = PackedVector3Array(0, 0, -1.84, 0, 0, -0.20010173, 0, 1.8, -1.84, 1.84, 0, -1.84, 0.1999217, 0, 0, 0.11995302, 0.23292872, 0, 0, 0.23292872, -0.12013316, 0, 1.8, -1.720047, 1.84, 1.8, -1.84, 1.84, 0, 0, 0.03980423, 1.5598472, 0, 0, 1.5598472, -0.04016447, 0, 1.6798354, -0.04016447, 0.03980423, 1.6798354, 0, 1.7198669, 1.8, 0, 1.84, 1.8, 0)
+
+[node name="KitchenCabinetInnerCorner" type="StaticBody3D" unique_id=1723915668]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1353300333]
+mesh = ExtResource("1_skkhk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=988923808]
+shape = SubResource("ConvexPolygonShape3D_uhjjn")

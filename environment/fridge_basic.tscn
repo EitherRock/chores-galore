@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://xelnhuoguh11"]
+
+[ext_resource type="ArrayMesh" uid="uid://ddlnfl58olrxr" path="res://assets/mesh/kitchenFridge_Mesh kitchenFridge.res" id="1_362na"]
+[ext_resource type="ArrayMesh" uid="uid://b112y4aqpy3r7" path="res://assets/mesh/kitchenFridge_Mesh doorFridge.res" id="2_jyefj"]
+[ext_resource type="ArrayMesh" uid="uid://dofv2cw7oqa6l" path="res://assets/mesh/kitchenFridge_Mesh doorFreezer.res" id="3_r37qp"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_131wl"]
+data = PackedVector3Array(1.7199999, 0, -1.1277, 0, 0, -1.1277, 0, 0, -0.16, 0, 0, -0.16, 1.7199999, 0, -0.16, 1.7199999, 0, -1.1277, 1.7199999, 3.6799998, -0.08, 0, 3.6799998, -0.08, 0, 3.6799998, -1.1277, 0, 3.6799998, -1.1277, 1.7199999, 3.6799998, -1.1277, 1.7199999, 3.6799998, -0.08, 0, 3.6799998, -1.1277, 0, 3.6799998, -0.08, 0, 0.2399, -0.08, 0, 0.2399, -0.08, 0, 0.2399, -0.16, 0, 3.6799998, -1.1277, 0, 0.2399, -0.16, 0, 0, -0.16, 0, 3.6799998, -1.1277, 0, 0, -0.16, 0, 0, -1.1277, 0, 3.6799998, -1.1277, 0, 0, -1.1277, 1.7199999, 0, -1.1277, 0.3117, 0.3117, -1.1277, 0.3117, 0.3117, -1.1277, 0, 3.6799998, -1.1277, 0, 0, -1.1277, 1.4082999, 0.3117, -1.1277, 0.3117, 0.3117, -1.1277, 1.7199999, 0, -1.1277, 0.3117, 0.3117, -1.1277, 0.3117, 2.4627, -1.1277, 0, 3.6799998, -1.1277, 1.7199999, 0, -1.1277, 1.7199999, 3.6799998, -1.1277, 1.4082999, 0.3117, -1.1277, 0.3117, 2.4627, -1.1277, 1.4082999, 2.4627, -1.1277, 0, 3.6799998, -1.1277, 1.7199999, 3.6799998, -1.1277, 1.4082999, 2.4627, -1.1277, 1.4082999, 0.3117, -1.1277, 1.7199999, 3.6799998, -1.1277, 0, 3.6799998, -1.1277, 1.4082999, 2.4627, -1.1277, 1.7199999, 0, -1.1277, 1.7199999, 0, -0.16, 1.7199999, 0.2399, -0.16, 1.7199999, 3.6799998, -1.1277, 1.7199999, 0, -1.1277, 1.7199999, 0.2399, -0.16, 1.7199999, 3.6799998, -0.08, 1.7199999, 3.6799998, -1.1277, 1.7199999, 0.2399, -0.16, 1.7199999, 0.2399, -0.16, 1.7199999, 0.2399, -0.08, 1.7199999, 3.6799998, -0.08, 1.7199999, 0.2399, -0.16, 1.7199999, 0, -0.16, 0, 0, -0.16, 0, 0, -0.16, 0, 0.2399, -0.16, 1.7199999, 0.2399, -0.16, 1.7199999, 0.2399, -0.16, 0, 0.2399, -0.16, 0, 0.2399, -0.08, 0, 0.2399, -0.08, 1.7199999, 0.2399, -0.08, 1.7199999, 0.2399, -0.16, 1.6126, 3.5726, -1, 1.6126, 2.8673, -1, 0.1074, 2.8673, -1, 0.1074, 2.8673, -1, 0.1074, 3.5726, -1, 1.6126, 3.5726, -1, 1.6126, 3.5726, -1, 0.1074, 3.5726, -1, 0.1074, 3.5726, -0.08, 0.1074, 3.5726, -0.08, 1.6126, 3.5726, -0.08, 1.6126, 3.5726, -1, 1.6126, 0.3473, -0.08, 0.1074, 0.3473, -0.08, 0.1074, 0.3473, -1, 0.1074, 0.3473, -1, 1.6126, 0.3473, -1, 1.6126, 0.3473, -0.08, 1.7199999, 0.2399, -0.08, 0, 0.2399, -0.08, 1.6126, 0.3473, -0.08, 1.6126, 0.3473, -0.08, 1.7199999, 3.6799998, -0.08, 1.7199999, 0.2399, -0.08, 0.1074, 0.3473, -0.08, 1.6126, 0.3473, -0.08, 0, 0.2399, -0.08, 1.6126, 0.3473, -0.08, 1.6126, 3.5726, -0.08, 1.7199999, 3.6799998, -0.08, 0, 0.2399, -0.08, 0, 3.6799998, -0.08, 0.1074, 0.3473, -0.08, 1.6126, 3.5726, -0.08, 0.1074, 3.5726, -0.08, 1.7199999, 3.6799998, -0.08, 0, 3.6799998, -0.08, 0.1074, 3.5726, -0.08, 0.1074, 0.3473, -0.08, 0, 3.6799998, -0.08, 1.7199999, 3.6799998, -0.08, 0.1074, 3.5726, -0.08, 0.1074, 2.8673, -1, 0.1074, 2.7598999, -1, 1.6126, 2.7598999, -1, 1.6126, 2.7598999, -1, 1.6126, 2.8673, -1, 0.1074, 2.8673, -1, 1.6126, 2.8673, -0.19999999, 0.1074, 2.8673, -0.19999999, 0.1074, 2.8673, -1, 0.1074, 2.8673, -1, 1.6126, 2.8673, -1, 1.6126, 2.8673, -0.19999999, 1.6126, 2.7598999, -1, 1.6126, 0.3473, -1, 0.1074, 0.3473, -1, 0.1074, 0.3473, -1, 0.1074, 2.7598999, -1, 1.6126, 2.7598999, -1, 1.6126, 2.8673, -1, 1.6126, 2.8673, -0.19999999, 1.6126, 2.7598999, -0.19999999, 1.6126, 2.8673, -0.19999999, 1.6126, 2.8673, -1, 1.6126, 3.5726, -1, 1.6126, 2.7598999, -0.19999999, 1.6126, 2.7598999, -1, 1.6126, 2.8673, -1, 1.6126, 2.8673, -0.19999999, 1.6126, 3.5726, -1, 1.6126, 3.5726, -0.08, 1.6126, 0.3473, -1, 1.6126, 2.7598999, -1, 1.6126, 2.7598999, -0.19999999, 1.6126, 3.5726, -0.08, 1.6126, 0.3473, -0.08, 1.6126, 2.8673, -0.19999999, 1.6126, 0.3473, -0.08, 1.6126, 0.3473, -1, 1.6126, 2.7598999, -0.19999999, 1.6126, 2.7598999, -0.19999999, 1.6126, 2.8673, -0.19999999, 1.6126, 0.3473, -0.08, 0.1074, 3.5726, -0.08, 0.1074, 3.5726, -1, 0.1074, 2.8673, -0.19999999, 0.1074, 3.5726, -1, 0.1074, 2.8673, -1, 0.1074, 2.8673, -0.19999999, 0.1074, 2.8673, -0.19999999, 0.1074, 2.8673, -1, 0.1074, 2.7598999, -1, 0.1074, 2.8673, -0.19999999, 0.1074, 2.7598999, -0.19999999, 0.1074, 3.5726, -0.08, 0.1074, 2.7598999, -1, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.8673, -0.19999999, 0.1074, 0.3473, -0.08, 0.1074, 3.5726, -0.08, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.7598999, -1, 0.1074, 0.3473, -1, 0.1074, 2.7598999, -0.19999999, 0.1074, 0.3473, -1, 0.1074, 0.3473, -0.08, 1.6126, 2.8673, -0.19999999, 1.6126, 2.7598999, -0.19999999, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.8673, -0.19999999, 1.6126, 2.8673, -0.19999999, 1.6126, 2.7598999, -1, 0.1074, 2.7598999, -1, 0.1074, 2.7598999, -0.19999999, 0.1074, 2.7598999, -0.19999999, 1.6126, 2.7598999, -0.19999999, 1.6126, 2.7598999, -1, 0.3117, 2.4627, -1.1277, 0.3117, 0.3117, -1.1277, 1.4082999, 0.3117, -1.1277, 1.4082999, 0.3117, -1.1277, 1.4082999, 2.4627, -1.1277, 0.3117, 2.4627, -1.1277)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mirr7"]
+points = PackedVector3Array(0, 0, -0.100015655, 0.16384438, 0.45386314, -0.26, 1.5050993, 0, -0.100015655, 0, 0, 0.09998435, 0, 2.4663117, -0.100015655, 1.3412548, 0.45386314, -0.26, 0.16384438, 2.012207, -0.26, 1.5050993, 0, 0.09998435, 1.5050993, 2.4663117, -0.100015655, 1.1052129, 2.3062525, 0.13996086, 0, 2.4663117, 0.09998435, 1.3412548, 2.012207, -0.26, 1.5050993, 2.4663117, 0.09998435, 1.4252398, 2.3062525, 0.13996086, 1.1052129, 2.3861613, 0.13996086, 1.4252398, 2.3861613, 0.13996086)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_362na"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:angular_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:linear_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g5ica"]
+points = PackedVector3Array(1.5050993, 0.7590148, 0.09999998, 1.4252398, 0.15996073, 0.14, 1.5050993, 0, 0.09999998, 1.5050993, 0.7590148, -0.100031324, 0, 0.7590148, 0.09999998, 1.4252398, 0.07994322, 0.14, 1.1052129, 0.15996073, 0.14, 1.5050993, 0, -0.100031324, 0, 0, 0.09999998, 1.288359, 0.57565063, -0.17999999, 0, 0.7590148, -0.100031324, 1.1052129, 0.07994322, 0.14, 0, 0, -0.100031324, 1.288359, 0.1832156, -0.17999999, 0.21674019, 0.57565063, -0.17999999, 0.21674019, 0.1832156, -0.17999999)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jyefj"]
+properties/0/path = NodePath(".:linear_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:angular_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="FridgeBasic" type="Node3D" unique_id=2085489577]
+
+[node name="FridgeBody" type="StaticBody3D" parent="." unique_id=930334882]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FridgeBody" unique_id=1547881894]
+mesh = ExtResource("1_362na")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FridgeBody" unique_id=1635895866]
+shape = SubResource("ConcavePolygonShape3D_131wl")
+
+[node name="FridgeDoor" type="RigidBody3D" parent="." unique_id=355551093]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FridgeDoor" unique_id=1788615640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11400001, 0.29900002, -0.124000005)
+mesh = ExtResource("2_jyefj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FridgeDoor" unique_id=1511801379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11400001, 0.29900002, -0.124000005)
+shape = SubResource("ConvexPolygonShape3D_mirr7")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="FridgeDoor" unique_id=103816486]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.117000006, 1.723, 0)
+node_a = NodePath("../../FridgeBody")
+node_b = NodePath("..")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="FridgeDoor" unique_id=1882880878]
+replication_config = SubResource("SceneReplicationConfig_362na")
+
+[node name="FreezerDoor" type="RigidBody3D" parent="." unique_id=2034365027]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FreezerDoor" unique_id=484540063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10300001, 2.872, -0.129)
+mesh = ExtResource("3_r37qp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FreezerDoor" unique_id=2119430875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10300001, 2.872, -0.129)
+shape = SubResource("ConvexPolygonShape3D_g5ica")
+
+[node name="HingeJoint3D2" type="HingeJoint3D" parent="FreezerDoor" unique_id=1973565238]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.117000006, 3.2450001, 0)
+node_a = NodePath("../../FridgeBody")
+node_b = NodePath("..")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="FreezerDoor" unique_id=204777519]
+replication_config = SubResource("SceneReplicationConfig_jyefj")

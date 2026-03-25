@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2hgs2nmiiqur"]
+
+[ext_resource type="ArrayMesh" uid="uid://3rsq2vfwan5b" path="res://assets/mesh/wallHalf_Mesh wallHalf.res" id="1_ie2h2"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ie2h2"]
+data = PackedVector3Array(2, 0, -0.19999999, 0, 0, -0.19999999, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, -0.19999999, 2, 5.1580997, 0, 0, 5.1580997, 0, 0, 5.1580997, -0.19999999, 0, 5.1580997, -0.19999999, 2, 5.1580997, -0.19999999, 2, 5.1580997, 0, 0, 5.1580997, -0.19999999, 0, 5.1580997, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.19999999, 0, 5.1580997, -0.19999999, 2, 0, -0.19999999, 2, 0, 0, 2, 5.1580997, 0, 2, 5.1580997, 0, 2, 5.1580997, -0.19999999, 2, 0, -0.19999999, 2, 5.1580997, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5.1580997, 0, 2, 5.1580997, 0, 0, 5.1580997, -0.19999999, 0, 0, -0.19999999, 2, 0, -0.19999999, 2, 0, -0.19999999, 2, 5.1580997, -0.19999999, 0, 5.1580997, -0.19999999)
+
+[node name="HalfWall" type="StaticBody3D" unique_id=1678286118]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816291252]
+mesh = ExtResource("1_ie2h2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2024120466]
+shape = SubResource("ConcavePolygonShape3D_ie2h2")

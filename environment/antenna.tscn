@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cqyv8lquev33q"]
+
+[ext_resource type="ArrayMesh" uid="uid://cu1khrych34qs" path="res://assets/mesh/televisionAntenna_Mesh televisionAntenna.res" id="1_fhx3v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_np03p"]
+points = PackedVector3Array(0.48845446, 0.41093713, -0.12679718, 0.5290555, 0.35092163, -0.10339859, 0.48845446, 0.41093713, -0.19326547, -0.48866165, 0.41093713, -0.12679718, 0.13847828, 0, -0.080031335, 0.5290555, 0.35092163, -0.21663272, -0.5290555, 0.35092163, -0.10339859, -0.00010359287, 0, 0, -0.48866165, 0.41093713, -0.19326547, 0.13847828, 0, -0.24003133, -0.00010359287, 0, -0.32, -0.5290555, 0.35092163, -0.21663272, -0.13858187, 0, -0.080031335, -0.13858187, 0, -0.24003133)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fhx3v"]
+properties/0/path = NodePath(".:angular_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:linear_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="Antenna" type="RigidBody3D" unique_id=372868600]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1152597612]
+mesh = ExtResource("1_fhx3v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1204207051]
+shape = SubResource("ConvexPolygonShape3D_np03p")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=99409594]
+replication_config = SubResource("SceneReplicationConfig_fhx3v")

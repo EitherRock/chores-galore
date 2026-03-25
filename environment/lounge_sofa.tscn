@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bjqoktyv0ri02"]
+
+[ext_resource type="ArrayMesh" uid="uid://mdvphm7duo1d" path="res://assets/mesh/loungeSofa_Mesh loungeSofa.res" id="1_7dwws"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dc771"]
+points = PackedVector3Array(2.3955555, 0.5290045, 0.008773088, 0.4666667, 0.1557138, -1.1732175, 0.4666667, 0.96436524, -1.1732175, 2.3955555, 0.1557138, -1.1732175, 0.4666667, 0.1557138, -0.053473473, 2.3955555, 0.96436524, 0.008773088, 0.4666667, 0.96436524, 0.008773088, 2.3955555, 0.96436524, -1.1732175, 2.3955555, 0.1557138, -0.053473473, 0.4666667, 0.5290045, 0.008773088)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pw6na"]
+points = PackedVector3Array(-0.031062394, -0.031111121, -0.2400975, 0.46666664, 0.9642556, 0.008773088, 0.46666664, 0.9642556, -1.1732175, -0.031062394, 1.5244443, -1.1732175, 0.44795975, 0.19999999, -1.128793, -0.031062394, 1.3997381, -0.053473473, -0.031062394, 0.1555677, -1.1732175, 0.40440178, 1.5244443, -0.17796662, 0.21780212, -0.031111121, -0.053473473, 0.40440178, 1.5244443, -1.1732175, 0.44795975, 0.19999999, -0.09321896, -0.031062394, -0.031111121, -0.053473473, -0.031062394, 1.5244443, -0.17796662, 0.46666664, 0.52907765, 0.008773088, 0.21780212, -0.031111121, -0.2400975, 0.40440178, 1.3997381, -0.053473473)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x4bmf"]
+points = PackedVector3Array(3.881176, 1.3410164, -0.10101649, 2.4540203, 0.19999999, -1.128793, 3.892646, 0.19999999, -1.128793, 3.702155, -0.031111121, -0.053473473, 2.3955555, 0.9642556, 0.008773088, 3.5154762, 1.5244443, -1.1732175, 2.3955555, 0.9642556, -1.1732175, 2.4540203, 0.19999999, -0.09321896, 3.9066665, 1.48, -1.1394465, 3.9511108, -0.031111121, -0.2400975, 3.5154762, 1.5244443, -0.17796662, 3.577601, 0.9642556, 0.008773088, 2.3955555, 0.52907765, 0.008773088, 3.912091, 0.007908812, -0.08, 3.5154762, 1.3997381, -0.053473473, 3.8810484, 1.4543821, -0.21438202, 3.702155, -0.031111121, -0.2400975)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wcdki"]
+points = PackedVector3Array(-0.031111002, -0.031111121, -1.4222465, 3.57768, 1.8977777, -1.2356467, 3.80241, 1.48, -1.1920146, 3.9511108, -0.031111121, -1.6711111, 0.34231973, 1.8977777, -1.6711111, 0.11759001, 1.48, -1.1920146, 3.8374949, 0.19999999, -1.1876298, 3.57768, 1.8977777, -1.6711111, -0.031111002, -0.031111121, -1.6711111, 0.08250504, 0.19999999, -1.1876298, 0.34231973, 1.8977777, -1.2356467, -0.031111002, 1.5241215, -1.6711111, 3.9511108, 1.5241215, -1.6711111, 3.9511108, -0.031111121, -1.4222465)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7dwws"]
+properties/0/path = NodePath(".:linear_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:angular_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="LoungeSofa" type="RigidBody3D" unique_id=624562280]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=994890013]
+mesh = ExtResource("1_7dwws")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=497618295]
+shape = SubResource("ConvexPolygonShape3D_dc771")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1883216267]
+shape = SubResource("ConvexPolygonShape3D_pw6na")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1763203567]
+shape = SubResource("ConvexPolygonShape3D_x4bmf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1995974646]
+shape = SubResource("ConvexPolygonShape3D_wcdki")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=432080204]
+replication_config = SubResource("SceneReplicationConfig_7dwws")

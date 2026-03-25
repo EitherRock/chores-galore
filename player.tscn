@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ci1vxl2k1ffk6"]
+
+[ext_resource type="Script" uid="uid://qen25mkegiqy" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4flbx"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Player" type="CharacterBody3D" unique_id=1879627196]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222161631]
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=85643427]
+mesh = SubResource("CapsuleMesh_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=90640095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=370534982]
+target_position = Vector3(0, 0, -3)
+
+[node name="GrabPoint" type="Marker3D" parent="Camera3D" unique_id=1864760448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -2)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=855704030]
+replication_config = SubResource("SceneReplicationConfig_4flbx")

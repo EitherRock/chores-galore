@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dyf0t4ypm3aj1"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxc5hg7q7q6e4" path="res://assets/mesh/bedDouble_Mesh bedDouble.res" id="1_p81ku"]
+[ext_resource type="ArrayMesh" uid="uid://qu4x1mvr3t2e" path="res://assets/mesh/bedDouble_Mesh cover.res" id="2_cgh1g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p81ku"]
+points = PackedVector3Array(0.048021913, -0.03571427, -0.32212067, 3.7319999, 0.19367743, -0.069852166, 3.7616925, 0.96428573, -3.9642856, 0.048021913, 0.96428573, -0.036322474, 0.12040429, 0.19999999, -3.814844, 3.68931, 0.19999999, -3.814844, 0.048021913, 0.96428573, -3.9642856, 3.7616925, 0.96428573, -0.036322474, 3.7616925, -0.03571427, -0.32212067, 0.18065293, 0, -0.107520185, 3.6290615, 5.551115e-17, -0.107520185, 0.092, 0.19579318, -0.084665366)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cgh1g"]
+points = PackedVector3Array(0.048021913, -0.03571427, -4.0357637, 3.8334286, 1.5357143, -4.0357637, 3.8334286, 1.5357143, -4.5356026, -0.023714304, 1.5357143, -4.0357637, -0.023714304, 0.17886508, -4.5356026, 3.7616925, -0.03571427, -4.5356026, 3.7620616, 0.19999999, -3.9748569, -0.023714304, 1.5357143, -4.5356026, 0.048021913, 0.9642717, -3.964286, 3.7616925, -0.03571427, -4.0357637, 0.048021913, -0.03571427, -4.5356026, 3.7616925, 0.9642717, -3.964286, 0.047652703, 0.19999999, -3.9748569, 3.8334286, 0.17886508, -4.5356026)
+
+[node name="DoubleBed" type="RigidBody3D" unique_id=731827135]
+
+[node name="BedDoubleMeshBedDouble" type="MeshInstance3D" parent="." unique_id=87003904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.579289, 0, 5.34474)
+mesh = ExtResource("1_p81ku")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1588086747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.579289, 0, 5.34474)
+shape = SubResource("ConvexPolygonShape3D_p81ku")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157120221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.579289, 0, 5.34474)
+shape = SubResource("ConvexPolygonShape3D_cgh1g")
+
+[node name="BedDoubleMeshCover" type="MeshInstance3D" parent="." unique_id=407271226]
+transform = Transform3D(-0.0001570801, 0, -0.49999997, 0, 0.55, 0, 0.49999997, 0, -0.0001570801, -1.516575, 0.8489213, 2.2389984)
+mesh = ExtResource("2_cgh1g")
