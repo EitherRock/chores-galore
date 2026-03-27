@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dj555tcbx4gjw"]
 
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_nrayj"]
 [ext_resource type="ArrayMesh" uid="uid://cnnmfkf62l0ug" path="res://assets/mesh/loungeChair_Mesh loungeChair.res" id="1_y46l4"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nrayj"]
@@ -32,6 +33,7 @@ properties/3/spawn = true
 properties/3/replication_mode = 1
 
 [node name="LoungeChair" type="RigidBody3D" unique_id=1426367281]
+script = ExtResource("1_nrayj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=211869196]
 mesh = ExtResource("1_y46l4")

@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://o1rp2n0xlsve"]
 
-[ext_resource type="Script" uid="uid://dindtxqj2mqwg" path="res://environment/television_vintage.gd" id="1_j5g2x"]
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_j5g2x"]
 [ext_resource type="ArrayMesh" uid="uid://d3mi1xgqwy7yi" path="res://assets/mesh/televisionVintage_Mesh televisionVintage.res" id="1_whm0p"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j5g2x"]
 points = PackedVector3Array(1.6400001, 1.0799999, 0, 1.6400001, 0.9226937, 0, 1.6400001, 1.0799999, -0.8000626, 0, 1.0799999, 0, 1.6400001, 0, -0.0400666, 1.2078466, 0, 0, 1.6400001, 0, -0.8000626, 1.3370752, 0.92766243, -1.0000782, 1.0168129, 0.92766243, -1.0799999, 0, 1.0799999, -0.8000626, 0, 0, 0, 1.3370752, 0.15223178, -1.0000782, 0, 0, -0.8000626, 1.0168129, 0.43248627, -1.0799999, 0.62302667, 0.92766243, -1.0799999, 0.30276433, 0.92766243, -1.0000782, 0.30276433, 0.15223178, -1.0000782, 0.62302667, 0.43248627, -1.0799999)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_j5g2x"]
-properties/0/path = NodePath(".:replicated_position")
+properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath(".:replicated_rotation")
+properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath(".:replicated_linear_velocity")
+properties/2/path = NodePath(".:linear_velocity")
 properties/2/spawn = true
 properties/2/replication_mode = 1
-properties/3/path = NodePath(".:replicated_angular_velocity")
+properties/3/path = NodePath(".:angular_velocity")
 properties/3/spawn = true
 properties/3/replication_mode = 1
 

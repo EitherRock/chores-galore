@@ -2,6 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ddlnfl58olrxr" path="res://assets/mesh/kitchenFridge_Mesh kitchenFridge.res" id="1_362na"]
 [ext_resource type="ArrayMesh" uid="uid://b112y4aqpy3r7" path="res://assets/mesh/kitchenFridge_Mesh doorFridge.res" id="2_jyefj"]
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="2_r37qp"]
 [ext_resource type="ArrayMesh" uid="uid://dofv2cw7oqa6l" path="res://assets/mesh/kitchenFridge_Mesh doorFreezer.res" id="3_r37qp"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_131wl"]
@@ -52,6 +53,7 @@ mesh = ExtResource("1_362na")
 shape = SubResource("ConcavePolygonShape3D_131wl")
 
 [node name="FridgeDoor" type="RigidBody3D" parent="." unique_id=355551093]
+script = ExtResource("2_r37qp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FridgeDoor" unique_id=1788615640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11400001, 0.29900002, -0.124000005)
@@ -72,6 +74,7 @@ angular_limit/upper = 0.0
 replication_config = SubResource("SceneReplicationConfig_362na")
 
 [node name="FreezerDoor" type="RigidBody3D" parent="." unique_id=2034365027]
+script = ExtResource("2_r37qp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FreezerDoor" unique_id=484540063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10300001, 2.872, -0.129)

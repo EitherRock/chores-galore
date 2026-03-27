@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqyv8lquev33q"]
 
 [ext_resource type="ArrayMesh" uid="uid://cu1khrych34qs" path="res://assets/mesh/televisionAntenna_Mesh televisionAntenna.res" id="1_fhx3v"]
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_np03p"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_np03p"]
 points = PackedVector3Array(0.48845446, 0.41093713, -0.12679718, 0.5290555, 0.35092163, -0.10339859, 0.48845446, 0.41093713, -0.19326547, -0.48866165, 0.41093713, -0.12679718, 0.13847828, 0, -0.080031335, 0.5290555, 0.35092163, -0.21663272, -0.5290555, 0.35092163, -0.10339859, -0.00010359287, 0, 0, -0.48866165, 0.41093713, -0.19326547, 0.13847828, 0, -0.24003133, -0.00010359287, 0, -0.32, -0.5290555, 0.35092163, -0.21663272, -0.13858187, 0, -0.080031335, -0.13858187, 0, -0.24003133)
@@ -20,6 +21,7 @@ properties/3/spawn = true
 properties/3/replication_mode = 1
 
 [node name="Antenna" type="RigidBody3D" unique_id=372868600]
+script = ExtResource("1_np03p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1152597612]
 mesh = ExtResource("1_fhx3v")

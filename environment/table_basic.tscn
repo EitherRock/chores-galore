@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://drt7lg7rusicn"]
 
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_dulwh"]
 [ext_resource type="ArrayMesh" uid="uid://bcncohy8oom7t" path="res://assets/mesh/table_Mesh table.res" id="1_q62ff"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dulwh"]
@@ -33,6 +34,8 @@ points = PackedVector3Array(3.366, 1.0458119, -0.026537409, 1.576498, 1.0953276,
 points = PackedVector3Array(1.110223e-16, 1.0462838, -1.7862878, 1.5635445, 1.3069, -0.013923697, 1.5759859, 1.0953276, 0.00017929077, 1.5759859, 1.0953276, -1.8162143, 1.110223e-16, 1.3045733, -1.7862878, 1.110223e-16, 1.3045733, -0.02974721, -1.110223e-16, 1.0462838, -0.02974721, 1.5524191, 1.3050456, -1.7895, 0.24061155, 1.0418833, 0.00017929077, 0.24061155, 1.0418833, -1.8162143)
 
 [node name="TableBasic" type="RigidBody3D" unique_id=334362938]
+mass = 5.0
+script = ExtResource("1_dulwh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=792675828]
 mesh = ExtResource("1_q62ff")

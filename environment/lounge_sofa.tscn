@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjqoktyv0ri02"]
 
 [ext_resource type="ArrayMesh" uid="uid://mdvphm7duo1d" path="res://assets/mesh/loungeSofa_Mesh loungeSofa.res" id="1_7dwws"]
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_dc771"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dc771"]
 points = PackedVector3Array(2.3955555, 0.5290045, 0.008773088, 0.4666667, 0.1557138, -1.1732175, 0.4666667, 0.96436524, -1.1732175, 2.3955555, 0.1557138, -1.1732175, 0.4666667, 0.1557138, -0.053473473, 2.3955555, 0.96436524, 0.008773088, 0.4666667, 0.96436524, 0.008773088, 2.3955555, 0.96436524, -1.1732175, 2.3955555, 0.1557138, -0.053473473, 0.4666667, 0.5290045, 0.008773088)
@@ -29,6 +30,8 @@ properties/3/spawn = true
 properties/3/replication_mode = 1
 
 [node name="LoungeSofa" type="RigidBody3D" unique_id=624562280]
+mass = 5.0
+script = ExtResource("1_dc771")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=994890013]
 mesh = ExtResource("1_7dwws")

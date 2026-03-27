@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://djxytgogcwgit"]
 
-[ext_resource type="Script" uid="uid://byiulj4qfsn2w" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://byiulj4qfsn2w" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b38ximlxbtw8k" path="res://maps/apartment.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://debuuu1uxolx0" path="res://multiplayer_spawner.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://debuuu1uxolx0" path="res://scripts/multiplayer_spawner.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ci1vxl2k1ffk6" path="res://player.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://dvqma3yovkhv0" path="res://level_spawner.gd" id="4_lquwl"]
-[ext_resource type="Script" uid="uid://w77g8iayp4bc" path="res://ui.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dvqma3yovkhv0" path="res://scripts/level_spawner.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://w77g8iayp4bc" path="res://scripts/ui.gd" id="5_lquwl"]
 
 [node name="Main" type="Node3D" unique_id=1485768978]
 script = ExtResource("1_ig7tw")

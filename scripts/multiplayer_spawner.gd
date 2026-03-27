@@ -1,6 +1,5 @@
 extends MultiplayerSpawner
 
-
 @export var network_player: PackedScene
 
 func _ready() -> void:
@@ -14,5 +13,3 @@ func spawn_player(id: int) -> void:
 	player.name = str(id)
 	
 	get_node(spawn_path).call_deferred('add_child', player) 
-	for child in $"..".get_children():
-		print(child)

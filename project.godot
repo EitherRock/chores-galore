@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 NetworkHandler="*uid://d0qobehepd4jn"
 
+[global_group]
+
+players=""
+
 [input]
 
 left={

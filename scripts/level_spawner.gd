@@ -13,8 +13,6 @@ func spawn_level() -> void:
 	var level: Node = network_level.instantiate()
 	
 	get_node(spawn_path).call_deferred('add_child', level) 
-	for child in $"..".get_children():
-		print(child)
 
 func _on_ui_server_started() -> void:
 	spawn_level()

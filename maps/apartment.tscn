@@ -212,7 +212,7 @@ shape = SubResource("SphereShape3D_1ainy")
 [node name="Doors" type="Node3D" parent="." unique_id=1238892338]
 
 [node name="BedroomDoorWay" parent="Doors" unique_id=630566900 instance=ExtResource("8_7b1bs")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2, 0.24594116, -0.40000004)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.217, 0.24594116, -0.40000004)
 
 [node name="BedroomDoorWay2" parent="Doors" unique_id=531285641 instance=ExtResource("8_7b1bs")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.7980003, 0.24594116, -0.85)

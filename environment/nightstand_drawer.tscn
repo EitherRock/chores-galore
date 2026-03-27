@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddupv2hp6ltss"]
 
-[ext_resource type="ArrayMesh" uid="uid://c0ukj0unwj2gk" path="res://assets/mesh/cabinetBedDrawerTable_Mesh drawer.res" id="1_0hpp0"]
+[ext_resource type="ArrayMesh" uid="uid://bk1bphqhedp02" path="res://assets/mesh/cabinetBedDrawerTable_Mesh drawer.res" id="1_0hpp0"]
+[ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="1_283a6"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_283a6"]
 points = PackedVector3Array(0.79344755, 0.20777142, 0.5560381, 0.6935052, 0.057828575, 0.34361905, 0.79344755, 0.057828575, 0.34361905, 0.6935052, 0.057828575, 0.5560381, 0.6935052, 0.20777142, 0.34361905, 0.79344755, 0.20777142, 0.34361905, 0.79344755, 0.057828575, 0.5560381, 0.6935052, 0.20777142, 0.5560381)
@@ -42,6 +43,7 @@ points = PackedVector3Array(0.109948084, 0.0416, 0.393982, -0.0062476173, -0.004
 points = PackedVector3Array(0.3061431, 0.057828575, 0.6934759, 0.4935619, 0.14528668, 0.668505, 0.4935619, 0.14528668, 0.65599996, 0.29363808, 0.14528668, 0.65599996, 0.4935619, 0.057828575, 0.65599996, 0.46857142, 0.14528668, 0.70598096, 0.46857142, 0.057828575, 0.70598096, 0.31862855, 0.14528668, 0.70598096, 0.29363808, 0.057828575, 0.65599996, 0.31862855, 0.057828575, 0.70598096, 0.29363808, 0.14528668, 0.668505, 0.48105687, 0.057828575, 0.6934759, 0.29363808, 0.057828575, 0.668505, 0.4935619, 0.057828575, 0.668505, 0.3061431, 0.14528668, 0.6934759, 0.48105687, 0.14528668, 0.6934759)
 
 [node name="Nightstand_Drawer" type="RigidBody3D" unique_id=1933367408]
+script = ExtResource("1_283a6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=701005089]
 mesh = ExtResource("1_0hpp0")
