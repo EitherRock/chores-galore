@@ -49,6 +49,7 @@ layout_mode = 2
 text = "CLIENT
 "
 
+[connection signal="server_started" from="UI" to="World/MultiplayerSpawner" method="_on_ui_server_started"]
 [connection signal="server_started" from="UI" to="World/LevelSpawner" method="_on_ui_server_started"]
 [connection signal="pressed" from="UI/VBoxContainer/Server" to="UI" method="_on_server_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/Client" to="UI" method="_on_client_pressed"]
