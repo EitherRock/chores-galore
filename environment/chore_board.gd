@@ -1,4 +1,3 @@
-# scripts/ui/chore_board.gd
 extends StaticBody3D
 class_name ChoreBoard
 
