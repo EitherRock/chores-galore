@@ -17,8 +17,6 @@ var gravity = ProjectSettings.get_setting('physics/3d/default_gravity')
 @export var drag_sensitivity := 0.01
 @export var drag_limit := 2.0
 @export var hold_distance := 2.0
-
-# Grab physics tuning
 @export var grab_spring_strength: float = 45.0    # Higher = more responsive
 @export var grab_damping_strength: float = 18.0   # Higher = less swing
 @export var grab_angular_damping: float = 0.92    # Higher = less spin
