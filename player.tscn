@@ -16,7 +16,8 @@ properties/1/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" unique_id=1879627196 groups=["players"]]
 script = ExtResource("1_4flbx")
-grab_force_strength = 4.0
+drag_sensitivity = 0.001
+grab_spring_strength = 80.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1222161631]
 shape = SubResource("CapsuleShape3D_onrkg")

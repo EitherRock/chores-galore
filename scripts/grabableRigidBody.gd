@@ -20,7 +20,8 @@ func _ready():
 
 @rpc('any_peer', 'call_local', 'reliable')
 func grab_request(player_id: int):
-	print("grab_request called on ", name, " by player ", player_id, " authority: ", is_multiplayer_authority())
+	if Util.debug:
+		print("grab_request called on ", name, " by player ", player_id, " authority: ", is_multiplayer_authority())
 	
 	if not is_multiplayer_authority():
 		print('object is not authority, cannot process grab')
@@ -28,21 +29,38 @@ func grab_request(player_id: int):
 	
 	if grabbed_by == -1:
 		grabbed_by = player_id
-		print('object grabbed by: ', grabbed_by)
+		if Util.debug:
+			print('object grabbed by: ', grabbed_by)
 		is_grabbed = true
 		
 		# Disable collisions with player while grabbed
 		set_collision_mask_value(2, false)
 		set_collision_layer_value(2, false)
 		
-		print("Sending grab_response to player: ", player_id)
-		# Notify the grabbing player with the object path
-		# This should go to the player's grab_response function
-		get_node("/root/Main/World/" + str(player_id)).grab_response.rpc_id(player_id, get_path(), true)
+		if Util.debug:
+			print("Sending grab_response to player: ", player_id)
+		
+		# Get the player node
+		var player_node = get_node("/root/Main/World/" + str(player_id))
+		
+		if player_node:
+			# Check if we're sending to ourselves
+			if player_id == multiplayer.get_unique_id():
+				# Call directly on the same peer
+				player_node.grab_response(get_path(), true)
+			else:
+				# Use RPC for remote peer
+				player_node.grab_response.rpc_id(player_id, get_path(), true)
 	else:
 		print('object already grabbed by: ', grabbed_by)
-		get_node("/root/Main/World/" + str(player_id)).grab_response.rpc_id(player_id, get_path(), false)
-
+		var player_node = get_node("/root/Main/World/" + str(player_id))
+		if player_node:
+			if player_id == multiplayer.get_unique_id():
+				player_node.grab_response(get_path(), false)
+			else:
+				player_node.grab_response.rpc_id(player_id, get_path(), false)
+			
+			
 @rpc('any_peer', 'call_local', 'reliable')
 func release_request(player_id: int):
 	print("release_request called on ", name, " by player ", player_id)
@@ -63,14 +81,10 @@ func release_request(player_id: int):
 		gravity_scale = get_meta("original_gravity", 1.0)
 		
 		# Notify the releasing player
-		get_node("/root/Main/World/" + str(player_id)).release_response.rpc_id(player_id, get_path(), true)
+		get_node("/root/Main/World/" + str(player_id)).release_response.rpc_id(player_id, true)
 
-@rpc('any_peer', 'reliable')
-func release_response(object_path: NodePath, success: bool):
-	print("release_response RPC received on player side")
-	pass
 
-@rpc("any_peer", "reliable")
+@rpc("any_peer", "reliable", "call_local")
 func apply_force_from_grab(force: Vector3):
 	# This runs on whoever has authority (should be server)
 	if is_multiplayer_authority() and is_grabbed:

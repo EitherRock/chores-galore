@@ -306,6 +306,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0360003, 5.0870004, 3.716)
 [node name="BookShelf" parent="LivingRoom" unique_id=1457920524 instance=ExtResource("26_y71vf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3450003, 0.24594116, 0.84082973)
 chore_key = "put_away_books"
+allowed_item_type = "book"
 
 [node name="Books" parent="LivingRoom" unique_id=1226944486 instance=ExtResource("27_8f7jr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3230004, 0.25071722, 2.283)

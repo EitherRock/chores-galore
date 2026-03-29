@@ -25,5 +25,5 @@ func spawn_server_player() ->void:
 func _on_ui_server_started() -> void:
 	if multiplayer.is_server():
 		spawn_server_player()
-		ChoreManager.choose_chores()
+		ChoreManager.select_chores()
 		

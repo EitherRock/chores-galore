@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci1vxl2k1ffk6" path="res://player.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dvqma3yovkhv0" path="res://scripts/level_spawner.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://w77g8iayp4bc" path="res://scripts/ui.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://snnaq6gne20v" path="res://scripts/managers/util.gd" id="7_272bh"]
 
 [node name="Main" type="Node3D" unique_id=1485768978]
 script = ExtResource("1_ig7tw")
@@ -48,6 +49,9 @@ text = "SERVER
 layout_mode = 2
 text = "CLIENT
 "
+
+[node name="Util" type="Node3D" parent="." unique_id=1537619447]
+script = ExtResource("7_272bh")
 
 [connection signal="server_started" from="UI" to="World/MultiplayerSpawner" method="_on_ui_server_started"]
 [connection signal="server_started" from="UI" to="World/LevelSpawner" method="_on_ui_server_started"]
