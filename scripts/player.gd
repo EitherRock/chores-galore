@@ -83,7 +83,7 @@ func try_grab():
 	if ray.is_colliding():
 		var body = ray.get_collider()
 		if body is GrabableRigidBody:
-			print("Trying to grab: ", body.name)
+			#print("Trying to grab: ", body.name)
 			# Send grab request to the object (server will process it)
 			body.grab_request.rpc_id(1, multiplayer.get_unique_id())
 			grab_request_pending = true
@@ -91,11 +91,11 @@ func try_grab():
 @rpc("any_peer", "reliable")
 func grab_response(object_path: NodePath, success: bool):
 	# Called by the GrabableRigidBody when grab is processed
-	print("PLAYER grab_response received - object_path: ", object_path, " success: ", success, " multiplayer_id: ", multiplayer.get_unique_id())
+	#print("PLAYER grab_response received - object_path: ", object_path, " success: ", success, " multiplayer_id: ", multiplayer.get_unique_id())
 	
 	if success:
 		var body = get_node(object_path)
-		print("Found body: ", body)
+		#print("Found body: ", body)
 		if body and body is GrabableRigidBody:
 			held_object = body
 			is_grabbing = true
@@ -177,8 +177,8 @@ func _physics_process(delta: float) -> void:
 		var force = dir * force_strength
 		
 		# Debug output
-		if dir.length() > 0.1:
-			print("Applying force: ", force.length(), " to move object ", held_object.name)
+		#if dir.length() > 0.1:
+			#print("Applying force: ", force.length(), " to move object ", held_object.name)
 		
 		# Call the apply_force_from_grab RPC on the object (server will process it)
 		held_object.apply_force_from_grab.rpc_id(1, force)

@@ -16,7 +16,7 @@ func _ready():
 		freeze = false
 		set_physics_process(true)
 	
-	print("GrabableRigidBody ready: ", name, " authority: ", get_multiplayer_authority())
+	#print("GrabableRigidBody ready: ", name, " authority: ", get_multiplayer_authority())
 
 @rpc('any_peer', 'call_local', 'reliable')
 func grab_request(player_id: int):

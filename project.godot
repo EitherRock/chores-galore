@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 NetworkHandler="*uid://d0qobehepd4jn"
+ChoreManager="*uid://cvdo831ndd0wv"
 
 [global_group]
 

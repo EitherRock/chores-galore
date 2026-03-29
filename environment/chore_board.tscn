@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://nc6abloo2a0g"]
+
+[ext_resource type="Script" uid="uid://c4hpslax8ghst" path="res://environment/chore_board.gd" id="1_v6t77"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0qak1"]
+size = Vector3(1.5, 1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6t77"]
+albedo_color = Color(0.07444572, 0.07444573, 0.07444573, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ldr3x"]
+material = SubResource("StandardMaterial3D_v6t77")
+size = Vector3(1.4, 0.9, 0.055)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_prl3o"]
+data = PackedVector3Array(-0.5, 0.5, 0.024999999, 0.5, 0.5, 0.024999999, -0.5, -0.5, 0.024999999, 0.5, 0.5, 0.024999999, 0.5, -0.5, 0.024999999, -0.5, -0.5, 0.024999999, 0.5, 0.5, -0.024999999, -0.5, 0.5, -0.024999999, 0.5, -0.5, -0.024999999, -0.5, 0.5, -0.024999999, -0.5, -0.5, -0.024999999, 0.5, -0.5, -0.024999999, 0.5, 0.5, 0.024999999, 0.5, 0.5, -0.024999999, 0.5, -0.5, 0.024999999, 0.5, 0.5, -0.024999999, 0.5, -0.5, -0.024999999, 0.5, -0.5, 0.024999999, -0.5, 0.5, -0.024999999, -0.5, 0.5, 0.024999999, -0.5, -0.5, -0.024999999, -0.5, 0.5, 0.024999999, -0.5, -0.5, 0.024999999, -0.5, -0.5, -0.024999999, 0.5, 0.5, 0.024999999, -0.5, 0.5, 0.024999999, 0.5, 0.5, -0.024999999, -0.5, 0.5, 0.024999999, -0.5, 0.5, -0.024999999, 0.5, 0.5, -0.024999999, -0.5, -0.5, 0.024999999, 0.5, -0.5, 0.024999999, -0.5, -0.5, -0.024999999, 0.5, -0.5, 0.024999999, 0.5, -0.5, -0.024999999, -0.5, -0.5, -0.024999999)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v6t77"]
+properties/0/path = NodePath(".:chore_data")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="ChoreBoard" type="StaticBody3D" unique_id=780705352]
+script = ExtResource("1_v6t77")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1492575786]
+mesh = SubResource("BoxMesh_0qak1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=528219353]
+mesh = SubResource("BoxMesh_ldr3x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=538636655]
+shape = SubResource("ConcavePolygonShape3D_prl3o")
+
+[node name="ChoreList" type="Node3D" parent="." unique_id=566024222]
+
+[node name="Title" type="Label3D" parent="." unique_id=1968623290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37600002, 0.030000001)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Todays Chores"
+font_size = 20
+
+[node name="ChoreSync" type="MultiplayerSynchronizer" parent="." unique_id=577280893]
+replication_config = SubResource("SceneReplicationConfig_v6t77")

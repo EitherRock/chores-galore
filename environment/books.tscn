@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://mb3be4ii8v3b"]
+
+[ext_resource type="ArrayMesh" uid="uid://hha1twdkoflb" path="res://assets/mesh/books_Mesh books.res" id="1_1vvya"]
+[ext_resource type="Script" uid="uid://cqt5lr6khnsqv" path="res://scripts/item_object.gd" id="1_lt8la"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lt8la"]
+points = PackedVector3Array(0.09778505, 0.41560903, -0.050432056, 0.09778505, 0.41560903, -0.378, 0, 0.0244093, -0.050432056, 0.19857433, 0.40316027, -0.02523452, 0.5009422, 0.40316027, -0.02523452, 0, 0.0244093, -0.378, 0.5009422, 0.40316027, -0.378, 0.09778505, 0, -0.050432056, 0.19857433, 0, -0.02523452, 0.5009422, 0.37797803, 2.9802322e-08, 0.6017315, 0.37797803, 2.9802322e-08, 0.09778505, 0, -0.378, 0.6017315, 0.37797803, -0.378, 0.5009422, 0, 2.9802322e-08, 0.6017315, 0, 2.9802322e-08, 0.6017315, 0, -0.378)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ucpk3"]
+points = PackedVector3Array(0.49806827, 0.3993466, -0.0252, 0.498897, 0.400967, -0.378, 0.6014505, 0.00023298462, -0.378, 0.2023318, 0.0018534017, -0.0252, 0.5970556, 0.0045279786, -2.7755576e-17, 0.2023318, 0.3993466, -0.0252, 0.20074934, 0.00023298462, -0.378, 0.5966035, 0.378, -0.0004212805, 0.5966035, 0.378, -0.37348348, 0.19139709, 0.39163122, -0.378, 0.4918728, -0.00477618, 0.008871406, 0.4918728, 0.38683778, 0.008871406, 0.19049221, 0.39247432, -0.051261403, 0.20074934, 0.400967, -0.378)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ggaal"]
+points = PackedVector3Array(0.072646976, 0.0062753954, -0.3741805, 0.09075696, 0.42508093, -0.04844287, 0.09075696, 0.42508093, -0.38277617, 0.1986, 0.3233638, -0.026865745, -0.0047574937, 0.05257456, -0.04844287, 0.18354243, 0.39106363, -0.378, 0.10982993, 0.004817337, -0.04844287, -0.0047574937, 0.05257456, -0.38277617, 0.10982993, 0.004817337, -0.38277617, 0.18627141, 0.31042153, -0.38277617, 0.18497226, 0.3938515, -0.05071661, 0.00012151613, 0.024369683, -0.056981973, 0.00012151613, 0.024369683, -0.37423706, 0.08122048, 0.39638454, -0.04844287, 0.08122048, 0.39638454, -0.38277617, 0.072646976, 0.0062753954, -0.05703854, 0.17274918, 0.396901, -0.37509608)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nexs5"]
+properties/0/path = NodePath(".:linear_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:angular_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="Books" type="RigidBody3D" unique_id=1226944486]
+script = ExtResource("1_lt8la")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2145631029]
+mesh = ExtResource("1_1vvya")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=87929480]
+shape = SubResource("ConvexPolygonShape3D_lt8la")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=618085254]
+shape = SubResource("ConvexPolygonShape3D_ucpk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=363651593]
+shape = SubResource("ConvexPolygonShape3D_ggaal")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=729932457]
+replication_config = SubResource("SceneReplicationConfig_nexs5")

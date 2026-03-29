@@ -12,6 +12,7 @@ func spawn_player(id: int) -> void:
 	player.name = str(id)
 	
 	get_node(spawn_path).call_deferred('add_child', player) 
+	
 
 func spawn_server_player() ->void:
 	var server_id = multiplayer.get_unique_id()
@@ -24,3 +25,5 @@ func spawn_server_player() ->void:
 func _on_ui_server_started() -> void:
 	if multiplayer.is_server():
 		spawn_server_player()
+		ChoreManager.choose_chores()
+		

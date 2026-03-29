@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b38ximlxbtw8k"]
 
+[ext_resource type="Script" uid="uid://kveor2eh0cbg" path="res://maps/apartment.gd" id="1_8f7jr"]
 [ext_resource type="PackedScene" uid="uid://ctbipqk6eqsb1" path="res://environment/wall.tscn" id="1_d0g5i"]
 [ext_resource type="PackedScene" uid="uid://c2hgs2nmiiqur" path="res://environment/half_wall.tscn" id="2_stvyg"]
 [ext_resource type="PackedScene" uid="uid://c02xvm8m7timn" path="res://assets/rugRounded.glb" id="3_y71vf"]
@@ -26,8 +27,11 @@
 [ext_resource type="PackedScene" uid="uid://dj555tcbx4gjw" path="res://environment/lounge_chair.tscn" id="24_d3hb3"]
 [ext_resource type="PackedScene" uid="uid://dhd42w5xlu0vc" path="res://environment/ceiling_fan.tscn" id="25_nkgav"]
 [ext_resource type="PackedScene" uid="uid://drt7lg7rusicn" path="res://environment/table_basic.tscn" id="26_j2lpc"]
+[ext_resource type="PackedScene" uid="uid://clfbfke1sio6t" path="res://environment/book_shelf.tscn" id="26_y71vf"]
+[ext_resource type="PackedScene" uid="uid://mb3be4ii8v3b" path="res://environment/books.tscn" id="27_8f7jr"]
 [ext_resource type="PackedScene" uid="uid://cnrll6v462k3q" path="res://environment/chair.tscn" id="27_aqo7c"]
 [ext_resource type="PackedScene" uid="uid://wciokt6ciyqr" path="res://assets/doorwayFront.glb" id="28_fdxam"]
+[ext_resource type="PackedScene" uid="uid://nc6abloo2a0g" path="res://environment/chore_board.tscn" id="29_ai1rd"]
 [ext_resource type="PackedScene" uid="uid://da2opuy5h4p0n" path="res://assets/rugRectangle.glb" id="29_h1my7"]
 [ext_resource type="PackedScene" uid="uid://cdu077v2ohxl7" path="res://assets/rugDoormat.glb" id="30_l27ex"]
 
@@ -44,6 +48,7 @@ size = Vector3(0.105609894, 3.376068, 0.15560913)
 radius = 0.3323815
 
 [node name="Home" type="Node3D" unique_id=1531316793]
+script = ExtResource("1_8f7jr")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1023056129]
 metadata/_edit_lock_ = true
@@ -212,7 +217,7 @@ shape = SubResource("SphereShape3D_1ainy")
 [node name="Doors" type="Node3D" parent="." unique_id=1238892338]
 
 [node name="BedroomDoorWay" parent="Doors" unique_id=630566900 instance=ExtResource("8_7b1bs")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.217, 0.24594116, -0.40000004)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.20100005, 0.24594116, -0.40000004)
 
 [node name="BedroomDoorWay2" parent="Doors" unique_id=531285641 instance=ExtResource("8_7b1bs")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.7980003, 0.24594116, -0.85)
@@ -297,6 +302,17 @@ transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.707
 
 [node name="CeilingFan" parent="LivingRoom" unique_id=1175272065 instance=ExtResource("25_nkgav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0360003, 5.0870004, 3.716)
+
+[node name="BookShelf" parent="LivingRoom" unique_id=1457920524 instance=ExtResource("26_y71vf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3450003, 0.24594116, 0.84082973)
+chore_key = "put_away_books"
+
+[node name="Books" parent="LivingRoom" unique_id=1226944486 instance=ExtResource("27_8f7jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3230004, 0.25071722, 2.283)
+
+[node name="ChoreBoard" parent="LivingRoom" unique_id=780705352 instance=ExtResource("29_ai1rd")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2340002, 2.078, -0.18800001)
 
 [node name="DinningRoom" type="Node3D" parent="." unique_id=61377271]
 
