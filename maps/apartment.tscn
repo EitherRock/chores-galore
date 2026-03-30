@@ -346,3 +346,34 @@ transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -1
 
 [node name="rugRounded" parent="." unique_id=2097198382 instance=ExtResource("3_y71vf")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1.5, -11.363001, 0.246, -5.388)
+
+[node name="SpawnMarkers" type="Node3D" parent="." unique_id=1298232552]
+
+[node name="PickUpItems" type="Node3D" parent="SpawnMarkers" unique_id=1936097259]
+
+[node name="Marker3D" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=156663658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1770005, 1.4859409, 0.54200006)
+
+[node name="Marker3D2" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=556103406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1289997, 1.3058559, 5.0720005)
+
+[node name="Marker3D3" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=1899116128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1289997, 1.925941, 5.0720005)
+
+[node name="Marker3D4" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=809676804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9370008, 0.24594116, 9.491001)
+
+[node name="Marker3D5" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=2114758985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7150006, 1.3149412, -8.582)
+
+[node name="Marker3D6" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=365797506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5929995, 1.8349411, -8.432)
+
+[node name="Marker3D7" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=141988549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7149997, 2.896, 9.601002)
+
+[node name="Marker3D8" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=1835452815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.131999, 0.60594153, -7.897)
+
+[node name="Marker3D9" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=967629434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5899994, 0.96294117, -8.119)

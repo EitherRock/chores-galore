@@ -11,6 +11,7 @@ const CHORE_OPTIONS := {
 		"type": ChoreType.PUT_AWAY,
 		"name": "Put Away Books",
 		"container_scene": "res://environment/book_shelf.tscn",
+		"item_scene": "res://environment/books.tscn",
 		"item_type": "book",
 		"min": 3,
 		"max": 10
@@ -67,7 +68,8 @@ func get_chore_data(chore_key: String) -> Dictionary:
 			"type": CHORE_OPTIONS[chore_key]["type"],
 			"current": _chore_data[chore_key]["current"],
 			"required": _chore_data[chore_key]["required"],
-			"item_type": CHORE_OPTIONS[chore_key].get("item_type", "")
+			"item_type": CHORE_OPTIONS[chore_key].get("item_type", ),
+			"item_scene": CHORE_OPTIONS[chore_key].get("item_scene", )
 		}
 	return {}
 
