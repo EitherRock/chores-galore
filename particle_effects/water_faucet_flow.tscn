@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bv607l1exqvyg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_24h8b"]
+lifetime_randomness = 0.06
+emission_shape = 1
+emission_sphere_radius = 0.05
+gravity = Vector3(0, -15, 0)
+scale_min = 0.5
+scale_max = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vh6gx"]
+albedo_color = Color(0.28627452, 1, 1, 1)
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_2q7nq"]
+material = SubResource("StandardMaterial3D_vh6gx")
+size = Vector2(0.25, 0.25)
+
+[node name="WaterFaucetFlow" type="GPUParticles3D" unique_id=985293455]
+amount = 30
+lifetime = 0.3
+process_material = SubResource("ParticleProcessMaterial_24h8b")
+draw_pass_1 = SubResource("QuadMesh_2q7nq")

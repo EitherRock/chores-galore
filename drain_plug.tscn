@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dgr5y8468sc2w"]
+
+[ext_resource type="PackedScene" uid="uid://ce3upiss4cys8" path="res://dynamic_chain.tscn" id="1_l5oj3"]
+[ext_resource type="PackedScene" uid="uid://cndqqpdkxuagk" path="res://environment/plug.tscn" id="2_id26p"]
+
+[node name="DrainPlug" type="Node3D" unique_id=351459337]
+
+[node name="DynamicChain" parent="." unique_id=59695248 instance=ExtResource("1_l5oj3")]
+angular_limit_degrees = 30.0
+twist_limit_degrees = 15.0
+link_mass = 0.5
+gravity_scale = 1.0
+link_damping = 0.5
+attached_scene = ExtResource("2_id26p")

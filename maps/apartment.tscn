@@ -242,6 +242,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.368, -0.22625881, -7.31100
 [node name="BathroomCabinetMirror" parent="Bathroom" unique_id=1023945332 instance=ExtResource("12_6sq8s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.798327, 2.618, -8.39713)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Bathroom" unique_id=1175556467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3440003, 4.059, -6.708)
+omni_range = 364.413
+
 [node name="Kitchen" type="Node3D" parent="." unique_id=688460222]
 
 [node name="KitchenCabinet" parent="Kitchen" unique_id=1147433775 instance=ExtResource("13_8l3sc")]
@@ -373,7 +377,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5929995, 1.8349411, -8.432
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7149997, 2.896, 9.601002)
 
 [node name="Marker3D8" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=1835452815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.131999, 0.60594153, -7.897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.897999, 0.60594153, -7.897)
 
 [node name="Marker3D9" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=967629434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5899994, 0.96294117, -8.119)
