@@ -9,7 +9,7 @@ signal drain_plugged(is_plugged)
 @onready var drain_marker = $DrainPlug/DrainMarker
 @onready var water_particles: GPUParticles3D = $WaterFaucetFlow
 @export var is_plugged: bool = true
-
+@export var is_toilet: bool = false
 
 
 # Use a property with setter to automatically sync visuals
