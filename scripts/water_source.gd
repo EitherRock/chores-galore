@@ -2,9 +2,15 @@ extends StaticBody3D
 
 class_name WaterSource
 
+signal water_running(is_running)
+signal drain_plugged(is_plugged)
+
 @onready var plug = $DrainPlug/Plug
 @onready var drain_marker = $DrainPlug/DrainMarker
 @onready var water_particles: GPUParticles3D = $WaterFaucetFlow
+@export var is_plugged: bool = true
+
+
 
 # Use a property with setter to automatically sync visuals
 @export var is_water_running: bool = false:
@@ -12,6 +18,7 @@ class_name WaterSource
 		if is_water_running == value:
 			return
 		is_water_running = value
+		water_running.emit(is_water_running)
 		# This runs on ALL peers when the value changes
 		update_water_visuals()
 
@@ -20,6 +27,7 @@ class_name WaterSource
 func _ready() -> void:
 	# Initialize visuals based on current state
 	update_water_visuals()
+	drain_plugged.emit(is_plugged)
 	
 	# Connect signals if they exist
 	if plug and plug.has_signal("chain_ready"):
@@ -56,7 +64,7 @@ func request_toggle_water():
 func toggle_water(new_state: bool):
 	# This runs on ALL peers (server AND all clients)
 	is_water_running = new_state
-	# The setter will call update_water_visuals()
+
 
 func update_water_visuals():
 	# Update visuals based on current state

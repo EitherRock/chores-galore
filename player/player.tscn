@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ci1vxl2k1ffk6"]
 
-[ext_resource type="Script" uid="uid://qen25mkegiqy" path="res://scripts/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://r1lxntpdmp6b" path="res://scripts/ray_interaction.gd" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://bxib3gd3auohj" path="res://face.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://qen25mkegiqy" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Script" uid="uid://r1lxntpdmp6b" path="res://scripts/ray_interaction.gd" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://bxib3gd3auohj" path="res://face.gd" id="3_qjkh3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
@@ -35,7 +35,7 @@ height = 0.05
 
 [node name="Player" type="CharacterBody3D" unique_id=1879627196 groups=["players"]]
 collision_layer = 2
-script = ExtResource("1_4flbx")
+script = ExtResource("1_g1dw6")
 drag_sensitivity = 0.001
 grab_spring_strength = 80.0
 
@@ -51,7 +51,7 @@ cull_mask = 1048573
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=370534982]
 target_position = Vector3(0, 0, -3)
-script = ExtResource("2_onrkg")
+script = ExtResource("2_yw30f")
 
 [node name="InteractionPrompt" type="Label" parent="Camera3D/RayCast3D" unique_id=1506915350]
 anchors_preset = 8
@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -2)
 replication_config = SubResource("SceneReplicationConfig_4flbx")
 
 [node name="Face" type="Node3D" parent="." unique_id=1853646281]
-script = ExtResource("3_i3pqv")
+script = ExtResource("3_qjkh3")
 look_at_chance = 0.6
 look_at_duration = 5.0
 blink_enabled = true

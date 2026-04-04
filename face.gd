@@ -12,7 +12,7 @@ extends Node3D
 @export var look_at_chance: float = 0.4
 @export var look_at_duration: float = 1.5
 
-# 🔥 NEW: Exaggeration controls
+# Exaggeration controls
 @export var horizontal_strength: float = 2.5
 @export var vertical_strength: float = 2.0
 
@@ -39,10 +39,6 @@ func _ready():
 	# Store original pupil positions (including Z)
 	left_original_position = left_pupil.position
 	right_original_position = right_pupil.position
-	
-	print("Original pupil positions (Z locked):")
-	print("Left pupil: ", left_original_position)
-	print("Right pupil: ", right_original_position)
 	
 	# Store original scales
 	original_pupil_scales[left_pupil] = left_pupil.scale
@@ -125,7 +121,6 @@ func look_at_target(target: Node3D):
 	var direction = (target.global_position - global_position).normalized()
 	var local_direction = global_transform.basis.inverse() * direction
 	
-	# 🔥 Use X and Z now
 	var dir2D = Vector2(local_direction.x, local_direction.z)
 	
 	if dir2D.length() > 1.0:
@@ -172,22 +167,13 @@ func _process(delta):
 		
 		left_pupil.position = Vector3(
 			left_original_position.x + current_offset.x,
-			left_original_position.y, # 🔒 LOCK Y
+			left_original_position.y,
 			left_original_position.z + current_offset.y
 		)
 
 		
 		right_pupil.position = Vector3(
 			right_original_position.x + current_offset.x,
-			right_original_position.y, # 🔒 LOCK Y
+			right_original_position.y,
 			right_original_position.z + current_offset.y
 		)
-
-
-# Debug
-func _input(event):
-	if event.is_action_pressed("ui_text_backspace") and OS.is_debug_build():
-		print("=== Eye Debug Info ===")
-		print("Offset: ", current_offset)
-		print("Left pupil: ", left_pupil.position)
-		print("Z locked at: ", left_original_position.z)
