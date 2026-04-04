@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 # First Person camera
+@onready var camera = $Camera3D
 @export var mouse_sensitivity := 0.002
 var yaw := 0.0
 var pitch := 0.0
@@ -10,6 +11,10 @@ var pitch := 0.0
 @export var speed := 6.0
 @export var jump_velocity := 4.5
 var gravity = ProjectSettings.get_setting('physics/3d/default_gravity')
+
+# Mesh for players
+@onready var mesh_instance: MeshInstance3D = $MeshInstance3D
+var my_color: Color = Color.WHITE
 
 # Grabby Grabby
 @onready var ray = $Camera3D/RayCast3D
@@ -33,6 +38,18 @@ func _enter_tree() -> void:
 
 func _ready():
 	add_to_group("players")
+	
+	# Register with the server when spawned
+	if multiplayer.is_server():
+		# Server gets color immediately
+		request_color_assignment.rpc_id(1, multiplayer.get_unique_id())
+	else:
+		# Clients request color from server
+		request_color_assignment.rpc_id(1, multiplayer.get_unique_id())
+		
+	# Update eyes so they dont show in camera
+	var is_local = is_local_player()
+	$Face.visible = not is_local
 	
 	if not is_multiplayer_authority():
 		$Camera3D.current = false
@@ -208,3 +225,37 @@ func _find_player_by_id(player_id: int) -> Player:
 		if p is Player and p.name.to_int() == player_id:
 			return p
 	return null
+	
+
+@rpc("any_peer", "call_local")
+func request_color_assignment(player_id: int):
+	if multiplayer.is_server():
+		# Server assigns next available color
+		var color_index = get_tree().get_nodes_in_group("players").size() - 1
+		assign_color.rpc(player_id, color_index)
+
+@rpc("reliable", "call_local")
+func assign_color(player_id: int, color_index: int):
+	if player_id == multiplayer.get_unique_id():
+		# This is me! Apply my color
+		var colors = [
+			Color.RED, Color.BLUE, Color.GREEN, 
+			Color.YELLOW, Color.ORANGE, Color.PURPLE
+		]
+		my_color = colors[color_index % colors.size()]
+		update_mesh_color()
+
+func update_mesh_color():
+	if mesh_instance:
+		if not mesh_instance.material_override:
+			mesh_instance.material_override = StandardMaterial3D.new()
+		mesh_instance.material_override.albedo_color = my_color
+		
+		print("Player ", multiplayer.get_unique_id(), " color set to: ", my_color)
+
+func set_player_color(color: Color):
+	my_color = color
+	update_mesh_color()
+
+func is_local_player() -> bool:
+	return multiplayer.get_unique_id() == int(name)

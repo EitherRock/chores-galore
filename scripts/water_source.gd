@@ -5,32 +5,70 @@ class_name WaterSource
 @onready var plug = $DrainPlug/Plug
 @onready var drain_marker = $DrainPlug/DrainMarker
 @onready var water_particles: GPUParticles3D = $WaterFaucetFlow
-@export var is_water_running: bool = false
+
+# Use a property with setter to automatically sync visuals
+@export var is_water_running: bool = false:
+	set(value):
+		if is_water_running == value:
+			return
+		is_water_running = value
+		# This runs on ALL peers when the value changes
+		update_water_visuals()
 
 @export var interact_prompt = 'Turn On'
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	water_particles.emitting = false
-	plug.chain_ready.connect(_on_chain_ready)
-	plug.attachment_created.connect(_on_attachment_created)
-
+	# Initialize visuals based on current state
+	update_water_visuals()
+	
+	# Connect signals if they exist
+	if plug and plug.has_signal("chain_ready"):
+		plug.chain_ready.connect(_on_chain_ready)
+	if plug and plug.has_signal("attachment_created"):
+		plug.attachment_created.connect(_on_attachment_created)
 
 func _on_chain_ready():
-	print('chain is ready')
+	print('chain is ready on peer: ', multiplayer.get_unique_id())
 
 func _on_attachment_created(attachment):
-	print('attachment ',attachment)
-	#attachment.collision_mask &= ~1
-	attachment.gravity_scale = 0
-	attachment.global_position = drain_marker.global_position + Vector3(0, 1, 0)
+	print('attachment ', attachment, ' on peer: ', multiplayer.get_unique_id())
+	if attachment:
+		attachment.gravity_scale = 0
+		attachment.global_position = drain_marker.global_position + Vector3(0, 1, 0)
 
 func interact():
+	# Only the server can change water state
+	if not multiplayer.is_server():
+		# Client: send request to server
+		rpc_id(1, "request_toggle_water")
+		return
+	
+	# Server: toggle water and sync to all clients
+	toggle_water.rpc(!is_water_running)
+
+@rpc("any_peer", "call_local", "reliable")
+func request_toggle_water():
+	# Server receives request from client
+	if multiplayer.is_server():
+		toggle_water.rpc(!is_water_running)
+
+@rpc("reliable", "call_local")
+func toggle_water(new_state: bool):
+	# This runs on ALL peers (server AND all clients)
+	is_water_running = new_state
+	# The setter will call update_water_visuals()
+
+func update_water_visuals():
+	# Update visuals based on current state
+	if water_particles:
+		water_particles.emitting = is_water_running
+	
+	# Update the interact prompt text based on state
 	if is_water_running:
-		interact_prompt = 'Turn On'
-		water_particles.emitting = false
-		is_water_running = false
-	else:
 		interact_prompt = 'Turn Off'
-		water_particles.emitting = true
-		is_water_running = true
+	else:
+		interact_prompt = 'Turn On'
+	
+	# Debug output to verify sync
+	#print("Water visual update on peer: ", multiplayer.get_unique_id(), 
+		  #" - Water running: ", is_water_running)

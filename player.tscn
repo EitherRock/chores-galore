@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://qen25mkegiqy" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://r1lxntpdmp6b" path="res://scripts/ray_interaction.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://bxib3gd3auohj" path="res://face.gd" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onrkg"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_i3pqv"]
+material = SubResource("StandardMaterial3D_onrkg")
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4flbx"]
 properties/0/path = NodePath(".:position")
@@ -14,6 +18,20 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i3pqv"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtel"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sweqy"]
+material = SubResource("StandardMaterial3D_hqtel")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.05
 
 [node name="Player" type="CharacterBody3D" unique_id=1879627196 groups=["players"]]
 collision_layer = 2
@@ -29,6 +47,7 @@ mesh = SubResource("CapsuleMesh_i3pqv")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=90640095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+cull_mask = 1048573
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=370534982]
 target_position = Vector3(0, 0, -3)
@@ -53,3 +72,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -2)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=855704030]
 replication_config = SubResource("SceneReplicationConfig_4flbx")
+
+[node name="Face" type="Node3D" parent="." unique_id=1853646281]
+script = ExtResource("3_i3pqv")
+look_at_chance = 0.6
+look_at_duration = 5.0
+blink_enabled = true
+
+[node name="LeftEye" type="MeshInstance3D" parent="Face" unique_id=875999975]
+transform = Transform3D(1, 0, -4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, 0.17, 0.703, -0.437)
+mesh = SubResource("CylinderMesh_i3pqv")
+
+[node name="Pupil" type="MeshInstance3D" parent="Face/LeftEye" unique_id=1811725486]
+transform = Transform3D(1, 0, 1.59578e-37, 0, 1, 0, 0, 0, 1, 0, -0.038767487, 0)
+mesh = SubResource("CylinderMesh_sweqy")
+
+[node name="RightEye" type="MeshInstance3D" parent="Face" unique_id=1356436860]
+transform = Transform3D(1, 0, -4.371139e-08, -4.371139e-08, 1.9106855e-15, -1, 0, 1, 1.9106855e-15, -0.16214317, 0.7034923, -0.43696937)
+mesh = SubResource("CylinderMesh_i3pqv")
+
+[node name="Pupil" type="MeshInstance3D" parent="Face/RightEye" unique_id=506715758]
+transform = Transform3D(1, 0, 1.59578e-37, 0, 1, 0, 0, 0, 1, 0, -0.038767487, 0)
+mesh = SubResource("CylinderMesh_sweqy")
