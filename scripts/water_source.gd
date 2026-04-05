@@ -8,8 +8,9 @@ signal drain_plugged(is_plugged)
 @onready var plug = $DrainPlug/Plug
 @onready var drain_marker = $DrainPlug/DrainMarker
 @onready var water_particles: GPUParticles3D = $WaterFaucetFlow
+@onready var clean_area: Area3D = $CleanArea
 @export var is_plugged: bool = true
-@export var is_toilet: bool = false
+var bodies_in_clean_area: Array = []
 
 
 # Use a property with setter to automatically sync visuals
@@ -34,6 +35,12 @@ func _ready() -> void:
 		plug.chain_ready.connect(_on_chain_ready)
 	if plug and plug.has_signal("attachment_created"):
 		plug.attachment_created.connect(_on_attachment_created)
+	
+
+func _process(delta):
+	for body in bodies_in_clean_area:
+		if is_instance_valid(body):
+			body.clean()
 
 func _on_chain_ready():
 	print('chain is ready on peer: ', multiplayer.get_unique_id())
@@ -80,3 +87,15 @@ func update_water_visuals():
 	# Debug output to verify sync
 	#print("Water visual update on peer: ", multiplayer.get_unique_id(), 
 		  #" - Water running: ", is_water_running)
+
+func _on_clean_area_body_entered(body: Node3D):
+	if body is RigidBody3D:
+		if body.get_parent().has_method('clean'):
+			var parent = body.get_parent()
+			bodies_in_clean_area.append(parent)
+			
+			
+func _on_clean_area_body_exited(body: Node3D) -> void:
+	if body is RigidBody3D:
+		var parent = body.get_parent()
+		bodies_in_clean_area.erase(parent)

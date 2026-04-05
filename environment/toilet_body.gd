@@ -37,6 +37,7 @@ var is_refilling: bool = false
 var is_clogged: bool = false
 var items_in_toilet: Array = []
 var clogged_items: Array = []
+var bodies_in_clean_area: Array = []
 
 @export var water_full_height: float = 1.0
 @export var water_empty_height: float = 0.4
@@ -236,12 +237,21 @@ func show_unclog_effect():
 			$UnclogParticles.emitting = false
 
 func _on_item_entered_toilet(body: Node):
-	if body is RigidBody3D and not items_in_toilet.has(body) and not clogged_items.has(body):
-		items_in_toilet.append(body)
+	if body is RigidBody3D:
+		if not items_in_toilet.has(body) and not clogged_items.has(body):
+			items_in_toilet.append(body)
+		
+		if body.get_parent().has_method('clean'):
+			var parent = body.get_parent()
+			bodies_in_clean_area.append(parent)
+		
 
 func _on_item_exited_toilet(body: Node):
 	if body is RigidBody3D:
 		items_in_toilet.erase(body)
+		
+		if body.get_parent() in bodies_in_clean_area:
+			bodies_in_clean_area.erase(body.get_parent())
 
 func _process(delta):
 	if not multiplayer.is_server():
@@ -275,6 +285,10 @@ func _process(delta):
 		if water_level >= 1.0:
 			water_level = 1.0
 			is_refilling = false
+			
+	for body in bodies_in_clean_area:
+		if is_instance_valid(body):
+			body.clean()
 
 func update_water_visuals():
 	if not water_mesh:

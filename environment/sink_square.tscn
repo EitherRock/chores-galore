@@ -17,9 +17,14 @@ albedo_color = Color(0.28627452, 1, 1, 1)
 material = SubResource("StandardMaterial3D_bdo8n")
 size = Vector2(1.5, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2vgam"]
+height = 0.3394198
+radius = 0.109000005
+
 [node name="SinkSquare" type="StaticBody3D" unique_id=1697225099]
 collision_mask = 7
 script = ExtResource("1_o8m3s")
+is_plugged = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1634946577]
 mesh = ExtResource("1_5qule")
@@ -32,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86100006, 2.354, -1.2590001
 lifetime = 0.2
 
 [node name="DrainPlug" type="Node3D" parent="." unique_id=1955140904]
+visible = false
 
 [node name="Plug" parent="DrainPlug" unique_id=59695248 instance=ExtResource("4_vh6gx")]
 transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0.8550001, 2.388, -1.6990001)
@@ -47,3 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84299994, 2.0220003, -1.143
 mesh = SubResource("PlaneMesh_2snwg")
 script = ExtResource("6_2vgam")
 max_water_height = 0.245
+
+[node name="CleanArea" type="Area3D" parent="." unique_id=722457926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797, 2.581, -1.211)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CleanArea" unique_id=1753850204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06499994, -0.33320522, -0.06700003)
+shape = SubResource("CylinderShape3D_2vgam")
+
+[connection signal="body_entered" from="CleanArea" to="." method="_on_clean_area_body_entered"]
+[connection signal="body_exited" from="CleanArea" to="." method="_on_clean_area_body_exited"]

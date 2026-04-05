@@ -17,6 +17,10 @@ albedo_color = Color(0.28627452, 1, 1, 1)
 material = SubResource("StandardMaterial3D_bdo8n")
 size = Vector2(1.5, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6xc4i"]
+height = 0.47570992
+radius = 0.109000005
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ifvy"]
 points = PackedVector3Array(1.5050993, 1.112279, 0.04, 1.3238685, 0.9108581, 0.12, 1.5050993, 0, 0.04, 1.5050993, 1.112279, -0.04, 0, 1.112279, 0.04, 1.3238685, 0.8709006, 0.12, 1.0038415, 0.9108581, 0.12, 1.5050993, 0, -0.04, 0, 0, 0.04, 0, 1.112279, -0.04, 1.0038415, 0.8709006, 0.12, 0, 0, -0.04)
 
@@ -41,6 +45,13 @@ max_water_height = 0.41
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87700003, 1.7740002, -1.1650001)
 lifetime = 0.2
 
+[node name="CleanArea" type="Area3D" parent="Sink" unique_id=325911863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82199997, 1.9890001, -1.0459999)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sink/CleanArea" unique_id=1126567153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06499994, -0.40135026, -0.1220001)
+shape = SubResource("CylinderShape3D_6xc4i")
+
 [node name="Door" type="RigidBody3D" parent="." unique_id=1818669443]
 script = ExtResource("5_6xc4i")
 
@@ -58,3 +69,6 @@ node_a = NodePath("../../Sink")
 node_b = NodePath("..")
 angular_limit/enable = true
 angular_limit/upper = 0.0
+
+[connection signal="body_entered" from="Sink/CleanArea" to="Sink" method="_on_clean_area_body_entered"]
+[connection signal="body_exited" from="Sink/CleanArea" to="Sink" method="_on_clean_area_body_exited"]

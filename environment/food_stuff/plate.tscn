@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cfpx7shuco628"]
+
+[ext_resource type="PackedScene" uid="uid://1qqy5j1vqw8e" path="res://environment/food_stuff/plate.glb" id="1_25j3g"]
+[ext_resource type="Script" uid="uid://oqyg03b6a0r" path="res://environment/food_stuff/plate.gd" id="1_y8epc"]
+[ext_resource type="Texture2D" uid="uid://dmyueuo377r5m" path="res://environment/food_stuff/Splatters/splat08.png" id="2_y8epc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvw1y"]
+points = PackedVector3Array(0, 0.05999412, -0.44588697, 0, 0.08999999, -0.44588697, 0.22294348, 0.05999412, -0.38617933, 0, 0, -0.34410462, -0.22294348, 0.05999412, -0.38617933, -0.22294348, 0.08999999, -0.38617933, 0.22294348, 0.08999999, -0.38617933, 0.171965, 0, -0.29801452, 0.386092, 0.05999412, -0.22294348, 0.2979272, 0, -0.17205232, -0.17205232, 0, -0.29801452, -0.38617933, 0.05999412, -0.22294348, -0.38617933, 0.08999999, -0.22294348, 0.386092, 0.08999999, -0.22294348, 0.44588697, 0.05999412, 0, 0.34401733, 0, 0, -0.29801452, 0, -0.17205232, -0.34410462, 0, 0, -0.44588697, 0.05999412, 0, -0.44588697, 0.08999999, 0, 0.44588697, 0.08999999, 0, 0.386092, 0.05999412, 0.22294348, 0.2979272, 0, 0.171965, -0.38617933, 0.05999412, 0.22294348, -0.29801452, 0, 0.171965, -0.38617933, 0.08999999, 0.22294348, 0.386092, 0.08999999, 0.22294348, 0.22294348, 0.05999412, 0.386092, 0.171965, 0, 0.2979272, -0.17205232, 0, 0.2979272, -0.22294348, 0.05999412, 0.386092, -0.22294348, 0.08999999, 0.386092, 0.22294348, 0.08999999, 0.386092, 0, 0.05999412, 0.44588697, 0, 0, 0.34401733, 0, 0.08999999, 0.44588697)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_y8epc"]
+properties/0/path = NodePath(".:linear_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:angular_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("..:clean_progress")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[node name="Plate" type="Node3D" unique_id=2055855082]
+script = ExtResource("1_y8epc")
+
+[node name="PlateBody" parent="." unique_id=193010554 instance=ExtResource("1_25j3g")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlateBody" unique_id=190853010]
+shape = SubResource("ConvexPolygonShape3D_yvw1y")
+
+[node name="Splatter" type="Decal" parent="PlateBody" unique_id=1217842654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007499993, 0.106500015, -0.034500003)
+size = Vector3(0.809, 0.141, 0.83500004)
+texture_albedo = ExtResource("2_y8epc")
+modulate = Color(0.49335772, 0.37710023, 0.045742452, 1)
+upper_fade = 0.13518767
+lower_fade = 0.04160883
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="PlateBody" unique_id=1342124992]
+replication_config = SubResource("SceneReplicationConfig_y8epc")
+
+[editable path="PlateBody"]

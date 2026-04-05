@@ -19,6 +19,10 @@ albedo_color = Color(0.28627452, 1, 1, 1)
 material = SubResource("StandardMaterial3D_bdo8n")
 size = Vector2(4.5, 2)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8syl1"]
+height = 0.84693754
+radius = 0.109000005
+
 [node name="Bathtub" type="StaticBody3D" unique_id=788428918]
 collision_mask = 7
 script = ExtResource("1_bumfi")
@@ -52,3 +56,13 @@ replication_config = SubResource("SceneReplicationConfig_bumfi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.315, 0.35500008, -1.143)
 mesh = SubResource("PlaneMesh_20ma5")
 script = ExtResource("6_8syl1")
+
+[node name="CleanArea" type="Area3D" parent="." unique_id=1016572725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.769, 1.9800001, -1.058)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CleanArea" unique_id=1258544266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.388, -0.86378133, -0.06700003)
+shape = SubResource("CylinderShape3D_8syl1")
+
+[connection signal="body_entered" from="CleanArea" to="." method="_on_clean_area_body_entered"]
+[connection signal="body_exited" from="CleanArea" to="." method="_on_clean_area_body_exited"]

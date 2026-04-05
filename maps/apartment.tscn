@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://byx82n4qxnj0w" path="res://environment/microwave.tscn" id="18_oecbf"]
 [ext_resource type="PackedScene" uid="uid://btn246d8q8aso" path="res://environment/upper_kitchen_cabinet.tscn" id="19_6f778"]
 [ext_resource type="PackedScene" uid="uid://bjqoktyv0ri02" path="res://environment/lounge_sofa.tscn" id="20_bkpf4"]
+[ext_resource type="PackedScene" uid="uid://cfpx7shuco628" path="res://environment/food_stuff/plate.tscn" id="21_048di"]
 [ext_resource type="PackedScene" uid="uid://co7nl5rv3o7y5" path="res://environment/television_cabinet_doors.tscn" id="21_avskk"]
 [ext_resource type="PackedScene" uid="uid://o1rp2n0xlsve" path="res://environment/television_vintage.tscn" id="22_tfjk8"]
 [ext_resource type="PackedScene" uid="uid://cqyv8lquev33q" path="res://environment/antenna.tscn" id="23_ub5am"]
@@ -286,6 +287,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.
 
 [node name="UpperKitchenCabinet4" parent="Kitchen" unique_id=2086877141 instance=ExtResource("19_6f778")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.160002, 3.5060005, 8.292)
+
+[node name="Plate" parent="Kitchen" unique_id=2055855082 instance=ExtResource("21_048di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88000005, 1.2850001, 6.475)
 
 [node name="LivingRoom" type="Node3D" parent="." unique_id=1724359284]
 
