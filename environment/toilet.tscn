@@ -13,7 +13,10 @@ albedo_color = Color(0.28627452, 1, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nqvnq"]
 material = SubResource("StandardMaterial3D_bdo8n")
-size = Vector2(0.7, 1)
+size = Vector2(0.78, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yjwvn"]
+size = Vector3(0.82400006, 0.303, 0.89500004)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6h2dj"]
 points = PackedVector3Array(-0.9247052, -1.8047785e-16, -0.3913748, -0.97409654, -1.8047785e-16, -0.34195492, -0.9157423, 0.08, -0.30088663, -0.8721673, 0.08, -0.34448338, -0.049486697, -1.8047785e-16, -0.3913748, -0.97409654, -1.8047785e-16, 0.34187827, -0.9157423, 0.08, 0.30081, -0.102024615, 0.08, -0.34448338, 0, -1.8047785e-16, -0.34195492, -0.9247052, -1.8047785e-16, 0.3913748, -0.8721673, 0.08, 0.3443301, -0.058544934, 0.08, -0.30088663, 0, -1.8047785e-16, 0.34187827, -0.049486697, -1.8047785e-16, 0.3913748, -0.102024615, 0.08, 0.3443301, -0.058544934, 0.08, 0.30081)
@@ -22,6 +25,14 @@ points = PackedVector3Array(-0.9247052, -1.8047785e-16, -0.3913748, -0.97409654,
 
 [node name="ToiletBody" type="StaticBody3D" parent="." unique_id=1717829907]
 script = ExtResource("1_6h2dj")
+refill_speed = 0.5
+refill_delay = 1.1
+clog_chance = 0.5
+flush_spin_speed = 20.0
+flush_shrink_speed = 1.0
+unclog_launch_force = 15.0
+water_empty_height = 0.418
+water_bottom_position = 0.418
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ToiletBody" unique_id=663209277]
 mesh = ExtResource("1_fbthk")
@@ -30,8 +41,15 @@ mesh = ExtResource("1_fbthk")
 shape = SubResource("ConcavePolygonShape3D_yjwvn")
 
 [node name="WaterMesh" type="MeshInstance3D" parent="ToiletBody" unique_id=1256511490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6129999, 0.81200016, -0.567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6129999, 0.91900015, -0.58599997)
 mesh = SubResource("PlaneMesh_nqvnq")
+
+[node name="ClogArea" type="Area3D" parent="ToiletBody" unique_id=256282233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74099994, 0.55100006, -0.532)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ToiletBody/ClogArea" unique_id=1556482410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100000024, 0.19250011, -0.01549989)
+shape = SubResource("BoxShape3D_yjwvn")
 
 [node name="ToiletLid" type="RigidBody3D" parent="." unique_id=152687567]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6, 0.90000004, -0.099999994)

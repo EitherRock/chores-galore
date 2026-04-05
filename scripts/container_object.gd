@@ -30,7 +30,7 @@ func _ready() -> void:
 func _setup() -> void:
 	max_capacity = ChoreManager.get_required_count(chore_key)
 	_is_ready = true
-	print("Container ready: ", name, " capacity: ", max_capacity)
+	#print("Container ready: ", name, " capacity: ", max_capacity)
 
 func _on_chores_selected(_selected: Array) -> void:
 	if chore_key in _selected:

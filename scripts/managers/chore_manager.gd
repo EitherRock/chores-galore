@@ -49,7 +49,7 @@ func select_chores() -> void:
 				"current": 0,
 				"required": _get_random_requirement(random_key)
 			}
-			print("Selected: ", random_key, " requires: ", _chore_data[random_key]["required"])
+			#print("Selected: ", random_key, " requires: ", _chore_data[random_key]["required"])
 	
 	_is_selected = true
 	chores_selected.emit(selected_chores)

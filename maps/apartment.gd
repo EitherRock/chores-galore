@@ -29,7 +29,7 @@ func _spawn_pickup_items():
 	var marker_index := 0
 	
 	for chore in chore_data:
-		print('printing chore ', chore)
+		#print('printing chore ', chore)
 		# Check valid chore
 		if chore.get("type") == ChoreManager.ChoreType.PUT_AWAY and chore.has("item_scene") and not chore["item_scene"].is_empty():
 			var scene = load(chore["item_scene"])
@@ -52,4 +52,4 @@ func _spawn_pickup_items():
 			
 				
 			
-				print("Spawned item at:", marker.name)
+				#print("Spawned item at:", marker.name)
