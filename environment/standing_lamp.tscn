@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bgnv1r1yweegy"]
+
+[ext_resource type="ArrayMesh" uid="uid://kqw1al7notm7" path="res://assets/mesh/lampRoundFloor_Mesh lampRoundFloor.res" id="1_kbuc1"]
+[ext_resource type="Script" uid="uid://lbrgsppavhsx" path="res://scripts/light.gd" id="1_yxgt0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kbuc1"]
+points = PackedVector3Array(0.29082063, 2.5390475, -0.18157619, 0.17904574, 0.08, -0.29335108, 0.17904574, 0.08, -0.17900765, 0.29338917, 0.08, -0.29335108, 0.18161428, 2.5390475, -0.29078254, 0.29338917, 0.08, -0.17900765, 0.18161428, 2.5390475, -0.18157619, 0.29082063, 2.5390475, -0.29078254)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a8d67"]
+points = PackedVector3Array(0.2907351, 0.13650791, -0.1816617, -0.036798418, -0.027285546, -0.5091952, -0.036798418, -0.027285546, 0.036836505, 0.5092333, -0.027285546, -0.5091952, 0.5092333, -0.027285546, 0.036836505, -0.036798418, 0.08189406, -0.5091952, -0.036798418, 0.08189406, 0.036836505, 0.5092333, 0.08189406, -0.5091952, 0.5092333, 0.08189406, 0.036836505, 0.18169978, 0.13650791, -0.290697, 0.18169978, 0.13650791, -0.1816617, 0.2907351, 0.13650791, -0.290697)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yxgt0"]
+points = PackedVector3Array(0.18163566, 3.303401, -0.563777, 0.2907351, 2.8667574, 0.14604282, 0.18163566, 2.8667574, 0.14604282, 0.2907351, 2.7029479, -0.6184016, 0.5091905, 3.4673014, -0.07238056, -0.036755607, 3.4126074, -0.07238056, -0.09140153, 2.7029479, -0.4544531, 0.56383646, 2.7029479, -0.017830834, 0.56383646, 3.0303853, -0.4544531, -0.09140153, 2.7029479, -0.017830834, 0.2907351, 2.5391383, -0.18162966, 0.3453169, 3.4673014, -0.50907767, -0.036755607, 3.4126074, -0.39997822, 0.18163566, 3.4673014, 0.036718905, 0.5091905, 2.7029479, -0.50907767, 0.2907351, 2.7029479, 0.14604282, 0.5091905, 3.4673014, -0.39997822, 0.18163566, 2.5391383, -0.2907291, -0.09140153, 2.9759636, -0.4544531, 0.18163566, 2.7029479, -0.6184016, 0.12705389, 3.4673014, -0.50907767, 0.56383646, 2.9759636, -0.017830834, 0.3453169, 3.4673014, 0.036718905, 0.2907351, 2.9213605, -0.6184016, -0.09140153, 2.9213605, -0.017830834, 0.01782617, 3.4673014, -0.07238056, 0.18163566, 3.248798, 0.09141827, 0.18163566, 2.7029479, 0.14604282, 0.2907351, 2.5391383, -0.2907291, 0.18163566, 2.5391383, -0.18162966, 0.18163566, 2.9213605, -0.6184016, -0.036755607, 2.7029479, -0.50907767)
+
+[node name="StandingLamp" type="Node3D" unique_id=840377112]
+
+[node name="Lamp" type="RigidBody3D" parent="." unique_id=1090934876]
+script = ExtResource("1_yxgt0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp" unique_id=1700039050]
+mesh = ExtResource("1_kbuc1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Lamp" unique_id=346977565]
+shape = SubResource("ConvexPolygonShape3D_kbuc1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Lamp" unique_id=41151008]
+shape = SubResource("ConvexPolygonShape3D_a8d67")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp" unique_id=1582393994]
+shape = SubResource("ConvexPolygonShape3D_yxgt0")
+
+[node name="Light" type="OmniLight3D" parent="Lamp" unique_id=862818710]
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0.23500001, 2.989, -0.208)
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 2.0

@@ -29,7 +29,7 @@ const CHORE_OPTIONS := {
 	"clean_dishes": {
 		"type": ChoreType.CLEAN,
 		"name": "Wash Dishes",
-		"item_scene": "res://environment/food_stuff/plate.tscn",
+		"item_scene": "res://environment/food_stuff/dishes/plate.tscn",
 		"item_type": "dish",
 		"min": 3,
 		"max": 10

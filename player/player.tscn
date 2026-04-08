@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ci1vxl2k1ffk6"]
 
 [ext_resource type="Script" uid="uid://qen25mkegiqy" path="res://player/player.gd" id="1_g1dw6"]
-[ext_resource type="Script" uid="uid://r1lxntpdmp6b" path="res://scripts/ray_interaction.gd" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://r1lxntpdmp6b" path="res://player/ray_interaction.gd" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://bxib3gd3auohj" path="res://face.gd" id="3_qjkh3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]

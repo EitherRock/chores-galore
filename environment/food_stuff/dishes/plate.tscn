@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfpx7shuco628"]
 
-[ext_resource type="PackedScene" uid="uid://1qqy5j1vqw8e" path="res://environment/food_stuff/plate.glb" id="1_25j3g"]
-[ext_resource type="Script" uid="uid://oqyg03b6a0r" path="res://environment/food_stuff/plate.gd" id="1_y8epc"]
+[ext_resource type="PackedScene" uid="uid://1qqy5j1vqw8e" path="res://environment/food_stuff/dishes/plate.glb" id="1_25j3g"]
+[ext_resource type="Script" uid="uid://oqyg03b6a0r" path="res://environment/food_stuff/dishes/plate.gd" id="1_y8epc"]
 [ext_resource type="Texture2D" uid="uid://dmyueuo377r5m" path="res://environment/food_stuff/Splatters/splat08.png" id="2_y8epc"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvw1y"]

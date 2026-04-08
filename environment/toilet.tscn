@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dia7saah726a2"]
 
-[ext_resource type="Script" uid="uid://3foy8mt20mee" path="res://environment/toilet_body.gd" id="1_6h2dj"]
+[ext_resource type="Script" uid="uid://3foy8mt20mee" path="res://scripts/toilet_body.gd" id="1_6h2dj"]
 [ext_resource type="ArrayMesh" uid="uid://5gq10sqe22ay" path="res://assets/mesh/toiletSquare_Mesh toiletSquare.res" id="1_fbthk"]
 [ext_resource type="Script" uid="uid://ch5qxaujp66wh" path="res://scripts/grabableRigidBody.gd" id="2_yjwvn"]
 [ext_resource type="ArrayMesh" uid="uid://ciu1op6t60671" path="res://assets/mesh/toiletSquare_Mesh Group 373.res" id="2_yrgof"]

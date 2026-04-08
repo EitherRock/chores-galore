@@ -1,7 +1,5 @@
 extends Node3D
 
-signal cleaned
-
 @export var clean_time: float = 3.0
 @onready var splatter: Decal = $PlateBody/Splatter
 @export var clean_progress: float = 0.0
@@ -10,7 +8,6 @@ func clean():
 	if !is_instance_valid(splatter):
 		return
 	
-	print('cleaniong!')
 	clean_progress += get_process_delta_time() / clean_time
 	clean_progress = clamp(clean_progress, 0.0, 1.0)
 	
@@ -22,7 +19,6 @@ func clean():
 
 	
 	if clean_progress >= 1.0:
-		#cleaned.emit()
 		splatter.queue_free()
 		_update_clean()
 

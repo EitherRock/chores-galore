@@ -33,25 +33,19 @@ func _spawn_pickup_items():
 	var test_chore_types: Array = [ChoreManager.ChoreType.PUT_AWAY, ChoreManager.ChoreType.CLEAN]
 	
 	for chore in chore_data:
-		print('printing chore ', chore)
 		# Check valid chore
 		var marker_index := 0
 		var markers: Array
 		
 		if chore.get('type') == ChoreManager.ChoreType.PUT_AWAY:
 			markers = pickup_markers
-			print('PUT AWEAYU')
+		
 		elif chore.get('type') == ChoreManager.ChoreType.CLEAN:
 			markers = dish_markers
-			print('CLEAN')
-			
-		
 		
 		if chore.get("type") in test_chore_types and chore.has("item_scene") and not chore["item_scene"].is_empty():
 			var scene = load(chore["item_scene"])
-			print('SCENE: ', scene)
 			for i in range(chore['required']):
-				print(i)
 				#if chore.get("type") == ChoreManager.ChoreType.PUT_AWAY:
 				if marker_index >= markers.size():
 					print("Not enough markers for chores")
@@ -68,7 +62,4 @@ func _spawn_pickup_items():
 				# Set position (use global for safety)
 				add_child(item)
 				item.global_position = marker.global_position
-			
-				
-			
 				#print("Spawned item at:", marker.name)
