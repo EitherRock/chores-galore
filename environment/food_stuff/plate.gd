@@ -22,8 +22,9 @@ func clean():
 
 	
 	if clean_progress >= 1.0:
-		cleaned.emit()
+		#cleaned.emit()
 		splatter.queue_free()
+		_update_clean()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,3 +35,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _update_clean():
+	ChoreManager.item_placed('dish')

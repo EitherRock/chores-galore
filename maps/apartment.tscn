@@ -385,3 +385,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.897999, 0.60594153, -7.897
 
 [node name="Marker3D9" type="Marker3D" parent="SpawnMarkers/PickUpItems" unique_id=967629434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5899994, 0.96294117, -8.119)
+
+[node name="Dishes" type="Node3D" parent="SpawnMarkers" unique_id=178469058]
+
+[node name="Marker3D" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=1346853918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.431001, 3.6459408, 0.365)
+
+[node name="Marker3D2" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=1063534738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.455001, 0.24594104, 0.2940003)
+
+[node name="Marker3D3" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=2000124422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1380005, 0.24594104, 9.398001)
+
+[node name="Marker3D4" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=2075036270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.567, 0.24594104, 8.327001)
+
+[node name="Marker3D5" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=1758176941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56300014, 1.3060946, 7.3290005)
+
+[node name="Marker3D6" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=1559074870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5680002, 1.3060946, 7.3290005)
+
+[node name="Marker3D7" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=1490992562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.708, 1.9259411, 7.3290005)
+
+[node name="Marker3D8" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=35519405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.114001, 2.6899886, 8.939001)
+
+[node name="Marker3D9" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=53016484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.047001, 0.24594092, -2.7449994)
+
+[node name="Marker3D10" type="Marker3D" parent="SpawnMarkers/Dishes" unique_id=282626815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151, 1.2987411, -8.479)

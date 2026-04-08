@@ -75,7 +75,7 @@ func _create_label(data: Dictionary) -> Label3D:
 	label.font_size = 12
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	
-	if data["type"] == ChoreManager.ChoreType.PUT_AWAY:
+	if data["type"] in ChoreManager.CHORE_TYPES:
 		label.text = "{name}: {current}/{required}".format({
 			"name": data["name"],
 			"current": data["current"],

@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var pickup_items = $SpawnMarkers/PickUpItems
+@onready var dish_items = $SpawnMarkers/Dishes
 @onready var chore_board = %ChoreBoard
 
 @export var chore_data: Array = [] :
@@ -23,17 +24,35 @@ func _on_chores_selected():
 
 
 func _spawn_pickup_items():
-	var markers: Array = pickup_items.get_children()
-	markers.shuffle() # randomize marker order
+	var pickup_markers: Array = pickup_items.get_children()
+	pickup_markers.shuffle() # randomize marker order
 	
-	var marker_index := 0
+	var dish_markers: Array = dish_items.get_children()
+	dish_markers.shuffle() # randominze dish order
+	
+	var test_chore_types: Array = [ChoreManager.ChoreType.PUT_AWAY, ChoreManager.ChoreType.CLEAN]
 	
 	for chore in chore_data:
-		#print('printing chore ', chore)
+		print('printing chore ', chore)
 		# Check valid chore
-		if chore.get("type") == ChoreManager.ChoreType.PUT_AWAY and chore.has("item_scene") and not chore["item_scene"].is_empty():
+		var marker_index := 0
+		var markers: Array
+		
+		if chore.get('type') == ChoreManager.ChoreType.PUT_AWAY:
+			markers = pickup_markers
+			print('PUT AWEAYU')
+		elif chore.get('type') == ChoreManager.ChoreType.CLEAN:
+			markers = dish_markers
+			print('CLEAN')
+			
+		
+		
+		if chore.get("type") in test_chore_types and chore.has("item_scene") and not chore["item_scene"].is_empty():
 			var scene = load(chore["item_scene"])
+			print('SCENE: ', scene)
 			for i in range(chore['required']):
+				print(i)
+				#if chore.get("type") == ChoreManager.ChoreType.PUT_AWAY:
 				if marker_index >= markers.size():
 					print("Not enough markers for chores")
 					return

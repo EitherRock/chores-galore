@@ -6,6 +6,8 @@ signal chore_progress_updated(chore_key: String, current: int, required: int)
 signal chore_completed(chore_key: String)
 signal chores_selected(chosen: Array)
 
+const CHORE_TYPES := [ChoreType.PUT_AWAY, ChoreType.CLEAN, ChoreType.PASS]
+
 const CHORE_OPTIONS := {
 	"put_away_books": {
 		"type": ChoreType.PUT_AWAY,
@@ -14,21 +16,30 @@ const CHORE_OPTIONS := {
 		"item_scene": "res://environment/books.tscn",
 		"item_type": "book",
 		"min": 3,
-		"max": 10
+		"max": 8
 	},
 	"throw_away_trash": {
 		"type": ChoreType.PASS,
-		"name": "Throw Away Trash"
+		"name": "Throw Away Trash",
+		"item_scene": "test",
+		"item_type": "test",
+		"min": 3,
+		"max": 10
 	},
-	"put_away_toys": {
-		"type": ChoreType.PASS,
-		"name": "Put Away Toys"
+	"clean_dishes": {
+		"type": ChoreType.CLEAN,
+		"name": "Wash Dishes",
+		"item_scene": "res://environment/food_stuff/plate.tscn",
+		"item_type": "dish",
+		"min": 3,
+		"max": 10
 	}
 }
 
 var selected_chores: Array = []  # Stores chore keys
 var _chore_data: Dictionary = {}  # Stores current progress and requirements
 var _is_selected: bool = false
+
 
 @export var max_chores: int = 3
 
@@ -102,6 +113,7 @@ func item_placed(item_type: String) -> void:
 			break
 		else:
 			print("Already at required count")
+			
 func is_chore_selected(chore_key: String) -> bool:
 	return chore_key in selected_chores
 
