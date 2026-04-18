@@ -1,8 +1,11 @@
 extends Node3D
 
+signal broken
+
 @export var clean_time: float = 3.0
 @onready var splatter: Decal = $PlateBody/Splatter
 @export var clean_progress: float = 0.0
+@onready var plate: RigidBody3D = $PlateBody
 
 func clean():
 	if !is_instance_valid(splatter):
@@ -29,8 +32,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
+	
+
+func _physics_process(_delta: float) -> void:
+	if plate.linear_velocity.length() > 5:
+		print('broken plate')
+		broken.emit()
 	
 func _update_clean():
 	ChoreManager.item_placed('dish')

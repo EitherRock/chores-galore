@@ -5,7 +5,7 @@ var current_interactable: Node = null
 
 func _process(_delta):
 	var collided_object = get_collider()
-	print('collided_object: ', collided_object)
+	#print('collided_object: ', collided_object)
 	interaction_prompt_label.text = ""
 	
 	# Check if we're looking at an interactable object

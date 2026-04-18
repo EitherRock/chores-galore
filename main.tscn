@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ci1vxl2k1ffk6" path="res://player/player.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dvqma3yovkhv0" path="res://scripts/level_spawner.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://w77g8iayp4bc" path="res://scripts/ui.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://f3443g7qdgi8" path="res://ui/book_ui.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://snnaq6gne20v" path="res://scripts/managers/util.gd" id="7_272bh"]
 
 [node name="Main" type="Node3D" unique_id=1485768978]
@@ -25,7 +26,7 @@ spawn_path = NodePath("..")
 script = ExtResource("4_lquwl")
 network_level = ExtResource("2_0xm2m")
 
-[node name="UI" type="Control" parent="." unique_id=1051372741]
+[node name="UI" type="Control" parent="." unique_id=1051372741 groups=["ui_manager"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -49,6 +50,8 @@ text = "SERVER
 layout_mode = 2
 text = "CLIENT
 "
+
+[node name="BookUI" parent="UI" unique_id=788937512 instance=ExtResource("7_5vw27")]
 
 [node name="Util" type="Node3D" parent="." unique_id=1537619447]
 script = ExtResource("7_272bh")

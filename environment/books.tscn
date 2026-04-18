@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mb3be4ii8v3b"]
 
-[ext_resource type="ArrayMesh" uid="uid://hha1twdkoflb" path="res://assets/mesh/books_Mesh books.res" id="1_1vvya"]
+[ext_resource type="ArrayMesh" uid="uid://bite3t86ifwlr" path="res://assets/mesh/books_Mesh books.res" id="1_1vvya"]
 [ext_resource type="Script" uid="uid://cqt5lr6khnsqv" path="res://scripts/item_object.gd" id="1_lt8la"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lt8la"]

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://f3443g7qdgi8"]
+
+[ext_resource type="Script" uid="uid://ba68hnpdmdy2b" path="res://ui/book_ui.gd" id="1_or51u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrv4y"]
+bg_color = Color(0.6, 0.08627451, 0.19215687, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5820g"]
+bg_color = Color(0.81960785, 0.81960785, 0.81960785, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or51u"]
+bg_color = Color(0.81960785, 0.81960785, 0.81960785, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_left = 20
+
+[node name="BookUI" type="CanvasLayer" unique_id=788937512]
+visible = false
+script = ExtResource("1_or51u")
+
+[node name="Panel" type="Panel" parent="." unique_id=2144996704]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hrv4y")
+
+[node name="LeftPagePanel" type="Panel" parent="Panel" unique_id=1600457926]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5820g")
+
+[node name="LeftPage" type="RichTextLabel" parent="Panel" unique_id=1165104161]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_top = -180.0
+offset_right = 385.0
+offset_bottom = 180.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+
+[node name="RightPagePanel" type="Panel" parent="Panel" unique_id=1491521951]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 780.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or51u")
+
+[node name="RightPage" type="RichTextLabel" parent="Panel" unique_id=2076189679]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 415.0
+offset_top = -180.0
+offset_right = 765.0
+offset_bottom = 180.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+
+[node name="VerticalLineBetweenPages" type="ColorRect" parent="Panel" unique_id=1389141394]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 25.0
+offset_right = 1.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0051989057, 0.005198906, 0.0051989057, 1)

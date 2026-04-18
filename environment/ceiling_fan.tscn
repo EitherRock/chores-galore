@@ -40,5 +40,6 @@ shape = SubResource("ConvexPolygonShape3D_r3777")
 shape = SubResource("ConvexPolygonShape3D_qbbpc")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1241029995]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74006367, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.006064, 0)
+light_color = Color(0.93333334, 0.9098039, 0.8666667, 1)
 omni_range = 71.253
