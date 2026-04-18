@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://nc6abloo2a0g" path="res://environment/chore_board.tscn" id="29_ai1rd"]
 [ext_resource type="PackedScene" uid="uid://da2opuy5h4p0n" path="res://assets/rugRectangle.glb" id="29_h1my7"]
 [ext_resource type="PackedScene" uid="uid://cdu077v2ohxl7" path="res://assets/rugDoormat.glb" id="30_l27ex"]
-[ext_resource type="PackedScene" uid="uid://ca4637rcvoufd" path="res://environment/food_stuff/dishes/broken_plate.tscn" id="35_048di"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vonw3"]
 size = Vector3(25, 0.5, 20)
@@ -410,6 +409,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.814, 3.1650002)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2092338039]
 environment = SubResource("Environment_8f7jr")
-
-[node name="BrokenPlate" parent="." unique_id=734149845 instance=ExtResource("35_048di")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.149278, 1.8928587, 0)

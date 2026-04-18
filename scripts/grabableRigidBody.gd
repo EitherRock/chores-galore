@@ -1,8 +1,13 @@
 extends RigidBody3D
 class_name GrabableRigidBody
 
+signal impact(collider, impulse)
+
+@export var enable_impact_detection: bool = false
 var grabbed_by: int = -1
 var is_grabbed: bool = false
+
+
 
 func _ready():
 	# Set initial authority to the server
@@ -17,6 +22,19 @@ func _ready():
 		set_physics_process(true)
 	
 	#print("GrabableRigidBody ready: ", name, " authority: ", get_multiplayer_authority())
+	
+
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+	if not enable_impact_detection:
+		return
+	
+	var contact_count = state.get_contact_count()
+	for i in range(contact_count):
+		var collider = state.get_contact_collider_object(i)
+		var impulse = state.get_contact_impulse(i)
+		
+		if collider and impulse.length() > 1 and not is_grabbed:
+			emit_signal("impact", collider, impulse)
 
 @rpc('any_peer', 'call_local', 'reliable')
 func grab_request(player_id: int):

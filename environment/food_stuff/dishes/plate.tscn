@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://1qqy5j1vqw8e" path="res://environment/food_stuff/dishes/plate.glb" id="1_25j3g"]
 [ext_resource type="Script" uid="uid://oqyg03b6a0r" path="res://environment/food_stuff/dishes/plate.gd" id="1_y8epc"]
+[ext_resource type="PackedScene" uid="uid://ca4637rcvoufd" path="res://environment/food_stuff/dishes/broken_plate.tscn" id="2_rerlj"]
 [ext_resource type="Texture2D" uid="uid://dmyueuo377r5m" path="res://environment/food_stuff/Splatters/splat08.png" id="2_y8epc"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvw1y"]
@@ -26,8 +27,12 @@ properties/4/replication_mode = 1
 
 [node name="Plate" type="Node3D" unique_id=2055855082]
 script = ExtResource("1_y8epc")
+broken_plate = ExtResource("2_rerlj")
 
 [node name="PlateBody" parent="." unique_id=193010554 instance=ExtResource("1_25j3g")]
+contact_monitor = true
+max_contacts_reported = 1
+enable_impact_detection = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PlateBody" unique_id=190853010]
 shape = SubResource("ConvexPolygonShape3D_yvw1y")
@@ -42,5 +47,7 @@ lower_fade = 0.04160883
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="PlateBody" unique_id=1342124992]
 replication_config = SubResource("SceneReplicationConfig_y8epc")
+
+[connection signal="impact" from="PlateBody" to="." method="_on_plate_body_impact"]
 
 [editable path="PlateBody"]
